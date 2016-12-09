@@ -1,0 +1,21 @@
+<main class="auth-main">
+  <div class="auth-block">
+    <h1 class="al-logo clearfix">Barbeque Nation</h1>
+    <form class="form-horizontal" ng-submit="login(loginForm.$valid)" name="loginForm" novalidate>
+      <div class="form-group" ng-class="{'has-error': loginForm.userName.$invalid && (loginForm.userName.$dirty || loginForm.$submitted)}">
+        <label for="inputUserName" class="col-sm-2 control-label sr-only">Username</label>
+          <input type="text" class="form-control" id="inputUserName" name="userName" ng-model="userLoginInfo.userName" placeholder="Username" required>
+          <span class="help-block error-block basic-block">Required valid username</span>
+      </div>
+      <div class="form-group" ng-class="{'has-error': loginForm.userPassword.$invalid && (loginForm.userPassword.$dirty || loginForm.$submitted)}">
+        <label for="inputUserPassword" class="col-sm-2 control-label sr-only">Password</label>
+          <input type="password" class="form-control" id="inputUserPassword"  name="userPassword"  ng-model="userLoginInfo.userPassword" placeholder="Password" required>
+          <span class="help-block error-block basic-block">Required password</span>
+      </div>
+      <div class="form-group button-wrapper">
+          <button type="submit" class="btn btn-primary btn-auth btn-lg">Login</button>
+      </div>
+    </form>
+
+  </div>
+</main>

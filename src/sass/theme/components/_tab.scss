@@ -1,0 +1,32 @@
+.info-panel {
+
+  dl {
+    border-top: 1px solid $border-light;
+    margin: 0;
+    &:last-child{
+      border-bottom: 1px solid $border-light;
+    }
+    dt {
+      background-color: #c4cbc2;
+      padding: 8px 8px;
+    }
+    dd {
+      padding: 12px 8px 0 8px;
+    }
+  }
+  &.info-panel-padding{
+    dl {
+
+      dt {
+        background-color: #c4cbc2;
+        padding: 6px 4px;
+      }
+      dd {
+        padding: 6px 8px 0 7px;
+      }
+    }
+  }
+  .controls{
+    margin-bottom: 10px;
+  }
+}

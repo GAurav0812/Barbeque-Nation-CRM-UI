@@ -1,0 +1,100 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="fa fa-close sn-link-close"></em>
+        </button>
+        <span ng-bind="myData.Name"> </span>
+        <div class="modal-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Customer Information</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td class="active"><b>Customer Name</b></td>
+                            <td><b>{{myData.Name}}</b></td>
+                            <td class="active"><b>Customer ID</b></td>
+                            <td><b>{{myData.ID}}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="active"><b>Phone Number</b></td>
+                            <td><b>{{myData.PhoneNo|emptyInputFilter}}</b></td>
+                            <td class="active"><b>Email</b></td>
+                            <td><b>{{myData.EmailId | emptyInputFilter}}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="active"><b>Birth Date</b></td>
+                            <td><b>{{myData.DOB|emptyInputFilter}}</b></td>
+                            <td class="active"><b>Anniversary Date</b></td>
+                            <td><b>{{myData.DOA|emptyInputFilter}}</b></td>
+                        </tr>
+                        <tr>
+                            <td class="active"><b>Last Visit</b></td>
+                            <td><b>{{myData.LastVisitedOn|emptyInputFilter}}</b></td>
+                            <td class="active"><b>Last Visited Location</b></td>
+                            <td><b>{{myData.LastLocation|emptyInputFilter}}</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <!-- <form name="editInstitute.form" ng-submit="updateInstitute(editInstitute.form.$valid);" novalidate>
+                         <div class="row">
+                             <div class="form-group col-sm-6">
+                                 <label class="control-label">Customer Name</label>
+                                 <input class="form-control" name="name" placeholder="Enter Name"
+                                        ng-model="myData.Name" required>
+                                 <span class="help-block error-block basic-block">Required</span>
+                             </div>
+                             <div class="form-group col-sm-6">
+
+                                 <label class="control-label">Customer ID</label>
+                                 <input class="form-control" name="mobile" placeholder="Enter ID"
+                                        ng-model="myData.ID" required>
+                                 <span class="help-block error-block basic-block">Required</span>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group col-sm-6">
+
+                                 <label class="control-label">Phone Number</label>
+                                 <input class="form-control" name="mobile" placeholder="Enter Number"
+                                        ng-model="myData.PhoneNo" required>
+                                 <span class="help-block error-block basic-block">Required</span>
+                             </div>
+
+                             <div class="form-group col-sm-6">
+
+                                 <label class="control-label">Email</label>
+                                 <input class="form-control" name="name" placeholder="Enter Email"
+                                        ng-model="myData.EmailId" required>
+                                 <span class="help-block error-block basic-block">Required</span>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group col-sm-6">
+
+                                 <label class="control-label">Birth Date</label>
+                                 <input class="form-control" name="mobile" placeholder="Enter Mobile"
+                                        ng-model="myData.DOB" required>
+                                 <span class="help-block error-block basic-block">Required</span>
+                             </div>
+                             <div class="form-group col-sm-6">
+                                 <label class="control-label">Anniversary Date</label>
+                                 <input class="form-control" name="phone" placeholder="Enter Date"
+                                        ng-model="myData.DOA">
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <button type="submit" class="btn btn-primary" ng-hide="loading">Save</button>
+                             <i class="fa fa-spinner fa-spin" ng-show="loading"></i>
+                         </div>
+                     </form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

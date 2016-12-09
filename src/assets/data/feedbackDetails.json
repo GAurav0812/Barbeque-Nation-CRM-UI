@@ -1,0 +1,1217 @@
+[
+  {
+    "DetailId": 555888,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555889,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555890,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555891,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555892,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555893,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555894,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 555895,
+    "FeedbackId": 69145,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909877,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909878,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909879,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909880,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909881,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909882,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 909883,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 909884,
+    "FeedbackId": 113027,
+    "CustomerId": 542255,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580942,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580943,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580944,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580945,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580946,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580947,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580948,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580949,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3580950,
+    "FeedbackId": 444097,
+    "CustomerId": 1107491,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355901,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355902,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355903,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355904,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355905,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355906,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2355907,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355908,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2355909,
+    "FeedbackId": 292260,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3253511,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253512,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253513,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253514,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253515,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253516,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253517,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253518,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3253519,
+    "FeedbackId": 403508,
+    "CustomerId": 2001303,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 4412203,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 4412204,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 4412205,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 4412206,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 4412207,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 4412208,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 4412209,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 4412210,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 4412211,
+    "FeedbackId": 547168,
+    "CustomerId": 2358241,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748202,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748203,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748204,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748205,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748206,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748207,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748208,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748209,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1748210,
+    "FeedbackId": 216962,
+    "CustomerId": 2168832,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271602,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2271603,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271604,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271605,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271606,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271607,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2271608,
+    "FeedbackId": 281813,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2411546,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2411547,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2411548,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2411549,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2411550,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2411551,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2411552,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2411553,
+    "FeedbackId": 299156,
+    "CustomerId": 2596696,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3616736,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3616737,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3616738,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3616739,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3616740,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3616741,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3616742,
+    "FeedbackId": 448530,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 2141299,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141300,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141301,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141302,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141303,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141304,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141305,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2141306,
+    "FeedbackId": 265646,
+    "CustomerId": 2286670,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930736,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930737,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 3930738,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930739,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930740,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930741,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930742,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 3930743,
+    "FeedbackId": 487469,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388212,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388213,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 388214,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 388215,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 388216,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388217,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388218,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388219,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 388220,
+    "FeedbackId": 48347,
+    "CustomerId": 2001303,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 1133387,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133388,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133389,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133390,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133391,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 1133392,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 1133393,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133394,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1133395,
+    "FeedbackId": 140709,
+    "CustomerId": 2358241,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 2776829,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776830,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776831,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Poor",
+    "GSI": -150
+  },
+  {
+    "DetailId": 2776832,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Average",
+    "GSI": 50
+  },
+  {
+    "DetailId": 2776833,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776834,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776835,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776836,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 2776837,
+    "FeedbackId": 344429,
+    "CustomerId": 980645,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 1997427,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Food & Beverages",
+    "SubCategory": "Buffet",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997428,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Service",
+    "SubCategory": "Courteous & Concern",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997429,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Clean &Crisp",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997430,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Food & Beverages",
+    "SubCategory": "Kulfi Nation",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997431,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Food & Beverages",
+    "SubCategory": "Starters",
+    "Rating": "Good",
+    "GSI": 75
+  },
+  {
+    "DetailId": 1997432,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Service",
+    "SubCategory": "Attentive",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997433,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Ambiance & Hygiene",
+    "SubCategory": "Relaxing & Comfortable",
+    "Rating": "Excellent",
+    "GSI": 100
+  },
+  {
+    "DetailId": 1997434,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Booking",
+    "SubCategory": "Reservation Experience",
+    "Rating": "Poor",
+    "GSI": -150
+  },
+  {
+    "DetailId": 1997435,
+    "FeedbackId": 247823,
+    "CustomerId": 948934,
+    "Category": "Food & Beverages",
+    "SubCategory": "Beverages",
+    "Rating": "Excellent",
+    "GSI": 100
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "ID": 2168832,
+    "Name": "Mr.Selva Raj",
+    "PhoneNo": 9444065832,
+    "EmailId": "NULL",
+    "LastLocation": "CCN01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 2286670,
+    "Name": "MR.M.N.REDDY",
+    "PhoneNo": 9640444440,
+    "EmailId": "mnreddy2111@gmail.com",
+    "LastLocation": "HBH01",
+    "DOB": "1-Oct",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 2358241,
+    "Name": "MR. FAHAN",
+    "PhoneNo": 9721404444,
+    "EmailId": "jfaham786@gmail.com",
+    "LastLocation": "LLW01",
+    "DOB": "1-Apr",
+    "DOA": "14-Dec",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 2001303,
+    "Name": "MR. KALPESH",
+    "PhoneNo": 9725785097,
+    "EmailId": "NULL",
+    "LastLocation": "APN01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 2596696,
+    "Name": "Monica",
+    "PhoneNo": 9742999606,
+    "EmailId": "NULL",
+    "LastLocation": "BIN01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 542255,
+    "Name": "saarini",
+    "PhoneNo": 9916762898,
+    "EmailId": "NULL",
+    "LastLocation": "NULL",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 980645,
+    "Name": "MS VANAJA",
+    "PhoneNo": 9962530302,
+    "EmailId": "NULL",
+    "LastLocation": "CKN01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 1107491,
+    "Name": "MR. TANMAY",
+    "PhoneNo": 9998822524,
+    "EmailId": "NULL",
+    "LastLocation": "NULL",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  },
+  {
+    "ID": 948934,
+    "Name": "Mr abhishek",
+    "PhoneNo": 9999802089,
+    "EmailId": "NULL",
+    "LastLocation": "MTS01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "10/4/2016",
+    "LastVisitedOn": "NULL"
+  }
+]

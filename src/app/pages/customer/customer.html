@@ -1,0 +1,394 @@
+<div class="col-md-12">
+    <div class="col-md-3">
+        <h3>Search Customer</h3>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <ui-select theme="bootstrap" required="true" data-live-search="true" title="Select With Search" selectpicker
+                       ng-model="selected.customer"
+                       class=" selectpicker with-search"
+                       title="Select Mobile Number"
+                       ng-change="checkCustomerData()">
+                <ui-select-match placeholder="Select Mobile Number">
+                    <span ng-bind="$select.selected.Name + ' - ' + $select.selected.PhoneNo"></span>
+                </ui-select-match>
+                <ui-select-choices
+                        repeat="item in (customersData | filter: $select.search) track by item.PhoneNo">
+                    <span ng-bind="item.PhoneNo"></span>
+                </ui-select-choices>
+            </ui-select>
+
+            <span class="input-group-btn">
+                                    <button class="btn btn-danger " type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+             </span>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="selected.customer.ID > 0">
+
+</div>
+<div class="clearfix"></div>
+<div class="panel panel-default" ng-show="selected.customer.ID > 0">
+    <div class="panel-heading">
+        <h3 class="panel-title">Customer Information</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-xs-12 controls">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <h3 ng-hide="selected.customer.ID != 2168832 && selected.customer.ID != 2358241 && selected.customer.ID != 2286670 ">
+                        <i class="fa fa-info-circle fa-lg " aria-hidden="true"></i>
+                        <b class="text-shadow">Today is
+                            <span ng-bind="myData.Name"></span>
+                            <span ng-if="selected.customer.ID == 2168832  ||  selected.customer.ID == 2358241 ">Marriage Anniversary</span>
+                            <span ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">Birthday</span>
+                        </b></h3>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 ">
+                    <button class="btn btn-primary btn-sm  btn-raised pull-right"
+                            ng-click="editCustomerInfo(studentInfo)">
+                        <i class="fa fa-eye"></i> Personal Details
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Total Visits ({{numberOfVisits}}) </h5>
+                            <div class="visit-text">
+                                <span ng-if="selected.customer.ID == 2168832"><b>Last Visited : 3 Months ago</b></span>
+                                <span ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241"><b>Last Visited : 2 Months ago </b> </span>
+                                <span ng-show="selected.customer.ID == 2358241"><b>Last Visited : 2 Months ago</b></span>
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Avg Time Spent / Visit</h5>
+                            <div class="dark-blue-text">
+                                <h3 ng-if="selected.customer.ID == 2168832"><i class="fa fa-street-view"
+                                                                               aria-hidden="true"></i>1 hr 15 minutes
+                                </h3>
+                                <h3 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241"><i
+                                        class="fa fa-street-view" aria-hidden="true"></i>50 minutes</h3>
+                                <h3 ng-show="selected.customer.ID == 2358241"><i class="fa fa-street-view"
+                                                                                 aria-hidden="true"></i>1 hr 25 minutes
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Avg Gap b/w Visit</h5>
+                            <div class="dark-blue-text">
+                                <h4 ng-if="selected.customer.ID == 2168832"><i class="fa fa-street-view"
+                                                                               aria-hidden="true"></i>1 months 15 days
+                                </h4>
+                                <h4 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241"><i
+                                        class="fa fa-street-view" aria-hidden="true"></i>5 Months 10 days</h4>
+                                <h4 ng-show="selected.customer.ID == 2358241"><i class="fa fa-street-view"
+                                                                                 aria-hidden="true"></i>1 Months 20 days
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="red-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5 ng-if="selected.customer.ID == 2168832"> Urgent Feedback : 2</h5>
+                            <h5 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">Urgent
+                                Feedback : 3</h5>
+                            <h5 ng-show="selected.customer.ID == 2358241">Urgent Feedback : 3</b></h5>
+                            <div class="col-sm-12 text-center">
+                                <div ng-if="selected.customer.ID == 2168832">
+                                    <div class="gap">
+                                        <span class="label label-success ">Resolved : 1</span>
+                                    </div>
+                                    <span class="label label-danger">Unresolved : 1</span>
+                                </div>
+                                <div ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">
+                                    <div class="gap">
+                                        <span class="label label-success ">Resolved : 2</span>
+                                    </div>
+                                    <span class="label label-danger">Unresolved : 1</span>
+                                </div>
+                                <div ng-show="selected.customer.ID == 2358241">
+                                    <div class="gap">
+                                        <span class="label label-success ">Resolved : 1</span>
+                                    </div>
+                                    <span class="label label-danger">Unresolved : 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <!--  <div class="col-lg-3 col-md-12 col-sm-12">
+                      <div class="panel panel-default text-center">
+                          <div class="panel-body">
+                              <h5>Anniversary/Birthday</h5>
+                              <div class="dark-blue-text">
+                                  <h3 ng-if="selected.customer.ID == 2168832">Anniversary</h3>
+                                  <h3 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">
+                                      Birthday</h3>
+                                  <h3 ng-show="selected.customer.ID == 2358241">Other</h3>
+                              </div>
+                          </div>
+                      </div>
+                  </div>-->
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5 ng-if="selected.customer.ID == 2168832">Feedback Rating (2)</h5>
+                            <h5 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">
+                                Feedback
+                                Rating (3)</h5>
+                            <h5 ng-show="selected.customer.ID == 2358241">Feedback Rating (2)</b></h5>
+                            <div class="dark-blue-text">
+                                <h3>{{avgFeedback}}%</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Avg Amount Spent / Visit</h5>
+                            <div class="dark-blue-text">
+                                <h4><i class="fa fa-inr" aria-hidden="true"></i> {{avgAmountSpent}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Last Visit Details</h5>
+                            <div class="visit-text">
+                                <div class="gap">
+                                    <span ng-if="selected.customer.ID == 2168832"><b>Location :Bangalore</b></span>
+                                    <span ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241"><b>Location : Pune </b></span>
+                                    <span ng-show="selected.customer.ID == 2358241"><b>Location : Mumbai</b></span>
+                                </div>
+                                <span ng-if="selected.customer.ID == 2168832"><b>Last Visited On :12-Nov-2015</b></span>
+                                <span ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241"><b>Last Visited On :12-Oct-2015</b></span>
+                                <span ng-show="selected.customer.ID == 2358241"><b>Last Visited On :02-Dec-2014</b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="blue-panel panel-default text-center">
+                        <div class="panel-body">
+                            <h5>Avg Number of PAX/Visit</h5>
+                            <div class="dark-blue-text">
+                                <h3 ng-if="selected.customer.ID == 2168832">4</h3>
+                                <h3 ng-hide="selected.customer.ID == 2168832 || selected.customer.ID == 2358241">5</h3>
+                                <h3 ng-show="selected.customer.ID == 2358241">2</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--     <div class="col-sm-12">
+                 <table class="table table-bordered">
+                     <tbody>
+                     <tr>
+                         <td class="active"><b>Customer Name</b></td>
+                         <td><b>{{myData.Name}}</b></td>
+                         <td class="active"><b>Customer ID</b></td>
+                         <td><b>{{myData.ID}}</b></td>
+                     </tr>
+                     <tr>
+                         <td class="active"><b>Phone Number</b></td>
+                         <td><b>{{myData.PhoneNo|emptyInputFilter}}</b></td>
+                         <td class="active"><b>Email</b></td>
+                         <td><b>{{myData.EmailId | emptyInputFilter}}</b></td>
+                     </tr>
+                     <tr>
+                         <td class="active"><b>Birth Date</b></td>
+                         <td><b>{{myData.DOB|emptyInputFilter}}</b></td>
+                         <td class="active"><b>Anniversary Date</b></td>
+                         <td><b>{{myData.DOA|emptyInputFilter}}</b></td>
+                     </tr>
+                     <tr>
+                         <td class="active"><b>Last Visit</b></td>
+                         <td><b>{{myData.LastVisitedOn|emptyInputFilter}}</b></td>
+                         <td class="active"><b>Last Visited Location</b></td>
+                         <td><b>{{myData.LastLocation|emptyInputFilter}}</b></td>
+                     </tr>
+                     </tbody>
+                 </table>
+                 <br><br>
+             </div>-->
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="blue-panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Overall Feedback Ratio</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="feedbackChart" class="chart chart-bar"
+                                    chart-data="feedbackCountReportData" chart-colors="colors" chart-labels="ratings">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="blue-panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Category-wise Feedback Report</h3></div>
+                        <div class="panel-body">
+                            <canvas class="chart chart-bar"
+                                    chart-data="categoryWiseFeedbackData" chart-colors="colors" chart-labels="category"
+                                    chart-options="options">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Monthly Visiting History</h3>
+                            </div>
+                            <div class="panel-body">
+                                <canvas id="line" class="chart chart-line admin-chart" chart-data="visitorData"
+                                        chart-labels="months"
+                                        chart-options="options">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" ng-show="selected.customer.ID > 0">
+    <div class="panel-heading">
+        <h3 class="panel-title">Visiting History</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-responsive table-striped" st-table="visitsInfo" st-safe-src="visitsMasterData">
+            <thead>
+            <tr class="sortable">
+                <th st-sort="VisitId"><b>VISIT ID</b></th>
+                <th st-sort="ReservationDate"><b>RESERVATION DATE</b></th>
+                <th st-sort="ReservationType"><b>RESERVATION TYPE</b></th>
+                <th><b>STATUS</b></th>
+                <th><b>FEEDBACK</b></th>
+                <th st-sort="Amount"><b>AMOUNT</b>( <i class="fa fa-inr " aria-hidden="true"></i> )</th>
+                <th><b>ACTION</b></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input st-search="ReservationDate" placeholder="Search Date"
+                           class="input-sm form-control search-input"
+                           type="search"/></th>
+                <th><select st-search="ReservationType" st-input-event="change" st-delay="0" ng-model="dummy"
+                            class="input-sm form-control">
+                    <option value="">
+                        All
+                    </option>
+                    <option value="Walk-in">
+                        Walk-in
+                    </option>
+                    <option value="Telephone">
+                        Telephone
+                    </option>
+                    <option value="App">
+                        App
+                    </option>
+                </select>
+                </th>
+                <th><select st-search="Status" st-input-event="change" st-delay="0" ng-model="dummy"
+                            class="input-sm form-control">
+                    <option value="">
+                        All
+                    </option>
+                    <option value="Dinner">
+                        Dinner
+                    </option>
+                    <option value="Lunch">
+                        Lunch
+                    </option>
+                </select>
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="items in visitsInfo">
+                <td>{{items.VisitId}}</td>
+                <td>{{items.ReservationDate}}</td>
+                <td>{{items.ReservationType}}</td>
+                <td>{{items.Status}}</td>
+                <td>
+                    <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
+                            ng-click="openFeedbackWindow(items)" data-toggle="tooltip" title="Urgent feedback" ng-if="$index==0 || $index==2"><i
+                            class="fa fa-commenting-o fa-lg"></i>
+                    </button>
+                    <a class="fa fa-exclamation-circle fa-2x red-icon-text"  ng-click="openFeedStatusForm()" ng-if="$index==0||$index==2" aria-hidden="true"></a>
+                    <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
+                            ng-click="openFeedbackWindow(items)" data-toggle="tooltip" title="feedback is resolved"
+                            ng-if="$index==1||$index==4"><i class="fa fa-commenting-o fa-lg"></i>
+                    </button>
+                    <i class="fa fa-check-circle fa-2x green-icon-text " ng-click="openFeedStatusForm2()" ng-if="$index==1||$index==4" aria-hidden="true"></i></b></span>
+                    <span class="blue-text" aria-hidden="true" ng-if="$index==3">No Feedback</span>
+
+                </td>
+                <td>{{items.Amount}}</td>
+                <td>
+                    <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
+                            ng-click="openVisitDetailForm1(items)" data-toggle="tooltip"
+                            title="View Visiting Details">
+                        <i
+                                class="fa fa-eye fa-lg"></i>
+                    </button>
+                    <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
+                            ng-click="openOrderForm1(items)" data-toggle="tooltip" title="View Order Details"><i
+                            class="fa fa-cutlery fa-lg"></i>
+                    </button>
+                   <!-- <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
+                            ng-click="openFeedbackWindow(items)" data-toggle="tooltip" title="View Order Details"><i
+                            class="fa fa-commenting-o fa-lg"></i>
+                    </button>-->
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="7" class="text-center">
+                    <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,95 @@
+<div class="modal-content responsive">
+    <div class="modal-header ">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="fa fa-close sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">Order Details For-<span ng-bind=myData.Name></span></h4>
+    </div>
+    <div class="modal-body">
+        <uib-tabset active="activeTab">
+            <uib-tab index="0" heading="Information">
+                <div class="panel info-panel info-panel-padding">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <dl class="dl-horizontal">
+                                <dt class="info">Visit Id</dt>
+                                <dd>{{visitData.VisitId}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="info">SeatedTime</dt>
+                                <dd>{{visitData.SeatedTime}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="info">Settlement Time</dt>
+                                <dd>{{visitData.SettlementTime}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="info">Table Number</dt>
+                                <dd>{{visitData.TableNo}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt class="info">Bill Number</dt>
+                                <dd>{{visitData.BillNo}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="Orders">
+                <div class="panel profile-panel">
+                    <div class="panel-body">
+                        <table class="table table-bordered" st-table="orderInfo">
+                            <thead>
+                            <tr>
+                                <th><b>SR.NO</b></th>
+                                <th><b>ITEM NAME</b></th>
+                                <th><b>CATEGORY</b></th>
+                                <th><b>PRODUCT GROUP</b></th>
+                                <th><b>DIVISION</b></th>
+                                <th><b>QUANTITY</b></th>
+                                <th><b>TOTAL AMOUNT</b></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="items in orderInfo">
+                                <td>{{$index+1}}</td>
+                                <td ng-bind="items.ItemName"></td>
+                                <td ng-bind="items.Category"></td>
+                                <td ng-bind="items.ProductGroup"></td>
+                                <td ng-bind="items.Division"></td>
+                                <td ng-bind="items.Quantity"></td>
+                                <td ng-bind="items.TotalAmount"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="6"><b>TOTAL</b></th>
+                                <td colspan="6"><b>{{visitData.Amount}}</b></td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="7" class="text-center">
+                                    <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+        &nbsp;
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
