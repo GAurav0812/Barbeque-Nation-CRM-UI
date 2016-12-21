@@ -12,211 +12,84 @@
         .filter("FilterByCategory", FilterByCategory)
         .filter("FilterByOverallRating", FilterByOverallRating);
 
-    function customerCtrl($scope, $location, $uibModal, $http, $filter) {
+    function customerCtrl($scope, $stateParams,$location, $uibModal,toastr, $http, $filter, $timeout) {
 
         var editModalBox;
 
         $scope.selected = {};
-
-        /* $scope.customersData = [
-         {
-
-         "CustomerId": 2272582,
-         "Name": "MR. RAGUVEER",
-         "PhoneNo": 8980005172,
-         "EmailId": "raghu@gmail.com",
-         "DOB": "12-Jul",
-         "DOA": "01-Apr",
-         "CompanyName": "CARL Pvt Ltd",
-
-         "visitDetails": [
-         {
-         "VisitId": 71,
-         "OutletName": "AMD-DRIVEIN",
-         "ReservationDate": "01-04-13",
-         "ReservationTime": "1754-01-01 13:57:16.983",
-         "Session": "Lunch",
-         "TotalPax": 4,
-         "Adult": 4,
-         "Child": 0,
-         "ConfirmTime": "1754-01-01 13:57:36.297",
-         "SeatedTime": "1754-01-01 13:57:35.127",
-         "SettlementTime": "1754-01-01 14:05:45.500",
-         "Status": "Lunch",
-         "TableNo": 33,
-         "BillNo": "00000P0007000006503",
-         "Amount": 3312,
-         "ReservationType": "Walk-in",
-         "BBQFestival": "NULL",
-         "CalendarFestival": "NULL",
-         "VisitRemark": "Seating near to AC",
-         "CarNo": "KN 04 4567",
-         "orderDetails": {
-         "DetailId": 16,
-         "items": [
-         {
-         "ItemNo": "I00006871",
-         "ItemName": "LUNCH VEG",
-         "Category": "FOOD - VEG",
-         "ProductGroup": "BUFFET VEG",
-         "Division": "FOOD 1",
-         "Quantity": 3,
-         "TotalAmount": 1356
-         },
-         {
-         "ItemNo": "I00006872",
-         "ItemName": "LUNCH NON VEG",
-         "Category": "FOOD - NON VEG",
-         "ProductGroup": "BUFFET NONVEG",
-         "Division": "FOOD 1",
-         "Quantity": 1,
-         "TotalAmount": 1956
-         }
-         ]
-
-         }
-
-         },
-
-         {
-         "VisitId": 72,
-         "OutletName": "AMD-DRIVEIN",
-         "ReservationDate": "01-04-13",
-         "ReservationTime": "1754-01-01 13:57:16.983",
-         "Session": "Lunch",
-         "TotalPax": 4,
-         "Adult": 4,
-         "Child": 0,
-         "ConfirmTime": "1754-01-01 13:57:36.297",
-         "SeatedTime": "1754-01-01 13:57:35.127",
-         "SettlementTime": "1754-01-01 14:05:45.500",
-         "Status": "Lunch",
-         "TableNo": 33,
-         "BillNo": "00000P0007000006503",
-         "Amount": 500,
-         "ReservationType": "Walk-in",
-         "BBQFestival": "NULL",
-         "CalendarFestival": "NULL",
-         "VisitRemark": "Seating near to AC",
-         "CarNo": "KN 04 4567",
-         "orderDetails": {
-         "DetailId": 18,
-         "items": [
-         {
-         "ItemNo": "I00006872",
-         "ItemName": "LUNCH NON VEG",
-         "Category": "FOOD - NON VEG",
-         "ProductGroup": "BUFFET NONVEG",
-         "Division": "FOOD 1",
-         "Quantity": 1,
-         "TotalAmount": 500
-         }
-         ]
-         }
-         }
-         ]
-         },
-         {
-         "CustomerId": 2272583,
-         "Name": "MR. Vikrant",
-         "PhoneNo": 8981115172,
-         "EmailId": "vikrant@gmail.com",
-         "DOB": "13-Oct",
-         "DOA": "22-Feb",
-         "CompanyName": "THE UNIQUE MEDIA SULUTION",
-
-         "visitDetails": [
-         {
-         "VisitId": 78,
-         "OutletName": "AMD-DRIVEIN",
-         "ReservationDate": "01-04-13",
-         "ReservationTime": "1754-01-01 13:57:16.983",
-         "Session": "Lunch",
-         "TotalPax": 4,
-         "Adult": 4,
-         "Child": 0,
-         "ConfirmTime": "1754-01-01 13:57:36.297",
-         "SeatedTime": "1754-01-01 13:57:35.127",
-         "SettlementTime": "1754-01-01 14:05:45.500",
-         "Status": "Lunch",
-         "TableNo": 44,
-         "BillNo": "00000P0007000006603",
-         "Amount": 1400,
-         "ReservationType": "Walk-in",
-         "BBQFestival": "NULL",
-         "CalendarFestival": "NULL",
-         "VisitRemark": "Seating near to AC",
-         "CarNo": "KN 05 4567",
-         "orderDetails": {
-         "DetailId": 10,
-         "items": [
-         {
-         "ItemNo": "I00006871",
-         "ItemName": "LUNCH VEG",
-         "Category": "FOOD - VEG",
-         "ProductGroup": "BUFFET VEG",
-         "Division": "FOOD 1",
-         "Quantity": 4,
-         "TotalAmount": 600
-         },
-         {
-         "ItemNo": "I00006872",
-         "ItemName": "LUNCH NON VEG",
-         "Category": "FOOD - NON VEG",
-         "ProductGroup": "BUFFET NONVEG",
-         "Division": "FOOD 1",
-         "Quantity": 4,
-         "TotalAmount": 800
-         }
-         ]
-
-         }
-
-         }]
-         }
-         ];*/
-
-        // $scope.myData = $scope.customersData[0];
         $scope.urgentFeedback = false;
         $scope.notUrgentFeedback = false;
-
-
-        $scope.checkCustomerData = function () {
-            $http.get("assets/data/visitHead.json").then(function (response) {
-                $scope.visitsMasterData = response.data;
-                $scope.visitsMasterData = $filter('filter')($scope.visitsMasterData, {CustomerId: $scope.selected.customer.ID});
-                $scope.visitsInfo = [].concat($scope.visitsMasterData);
-                $scope.getRowByVisitId();
-                $scope.numberOfVisits = $scope.visitsInfo.length;
-                $scope.CustomersOrderData = $filter('filter')($scope.orderData, {CustomerId: $scope.selected.customer.ID});
-                $scope.numberOfOrder = $scope.CustomersOrderData.length;
-                $scope.myData = $scope.selected.customer;
-
-                $scope.visitDetailData = $filter('filter')($scope.orderData, {CustomerId: $scope.selected.customer.ID});
-
-                $scope.totalAmount = 0;
-
-                for (var i = 0; i < $scope.visitDetailData.length; i++) {
-                    $scope.totalAmount = (parseInt($scope.totalAmount + $scope.visitDetailData[i].TotalAmount));
-                }
-                $scope.avgAmountSpent = Math.round(($scope.totalAmount / $scope.visitDetailData.length) * 100) / 100;
-                $scope.avgAmountSpent = -($scope.avgAmountSpent);
-
-                $http.get("assets/data/feedbackHead.json").then(function (response) {
-                    $scope.feedbackData = response.data;
-                    $scope.CustomerFeedbackData = $filter('filter')($scope.feedbackData, {CustomerId: $scope.selected.customer.ID});
-                    $scope.chart();
-                    $scope.totalFeedback = 0;
-                    for (var i = 0; i < $scope.CustomerFeedbackData.length; i++) {
-                        $scope.totalFeedback = (parseInt($scope.totalFeedback + $scope.CustomerFeedbackData[i].GSI));
-                    }
-                    $scope.avgFeedback = Math.round(($scope.totalFeedback / $scope.CustomerFeedbackData.length) * 100) / 100;
-
-
-                    $scope.numberOfFeedback = $scope.CustomerFeedbackData.length;
-                });
-            });
+        $scope.dataLoading = false;
+        $scope.noValidCustomer=false;
+        $scope.isChartTabSelected = false;
+        $scope.newMobileNumber = {
+            form: {},
+            info: {
+                mobile: ""
+            }
         };
+
+        $scope.customerData = {}
+        $scope.searchCustomer = function (isValid) {
+            if (isValid) {
+                /*//$http.jsonp('http://crm.bnhl.in/CRMProfile/Service1.svc/GetCustomerProfile/' + number + '&callback=JSON_CALLBACK')
+
+                 $http({
+                 method: 'JSONP',
+                 url: 'http://api.worldbank.org/countries/all/indicators/SP.POP.TOTL?format=jsonP&prefix=Getdata', // + $scope.newMobileNumber.info.mobile,
+                 params: {
+                 format: 'jsonp',
+                 json_callback: 'JSON_CALLBACK'
+                 }
+                 }).then(function (data) {
+
+                 console.log(data)
+                 });*/
+
+               // $http.get("../Service1.svc/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
+                $http.get("/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
+                    //console.info(response.data);
+                    $scope.customerData = response.data.customerinfo;
+                    $scope.dataLoading = true;
+                    $scope.visitMasterData = response.data.customerinfo.Visits;
+                    $scope.visitsData = [].concat($scope.visitMasterData);//storing visitData
+                    // $scope.visitsItemData = [];
+                    console.info($scope.visitsData);
+                    //Counting of totalfeedbackavg
+                    $scope.totalFeedback = 0;
+                    $scope.countUrgentFeedBack = 0;
+                    $scope.countResolvedUrgentFeedBack = 0;
+
+                    for (var i = 0; i < $scope.visitsData.length; i++) {
+                        if ($scope.visitsData[i].Feedback != null) {
+                            $scope.totalFeedback = (parseInt($scope.totalFeedback + $scope.visitsData[i].Feedback.GSI));
+                            $scope.countUrgentFeedBack = $scope.countUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeed ? 1 : 0);
+                            $scope.countResolvedUrgentFeedBack = $scope.countResolvedUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeedStatus.toUpperCase() == "CLOSE" ? 1 : 0);
+                        }
+                    }
+                    $scope.avgFeedback = Math.round(($scope.totalFeedback / $scope.visitsData.length) * 100) / 100;
+                    var dt = new Date($scope.customerData.LastVisitedOn);
+                    $scope.LastVisitMonth = getMonthDiff(new Date(), dt);
+                    //VisitDetailsArrayStoring
+                    $scope.visitDetailsData = $scope.visitsData.VisitDetails;
+                    loadMainChart($scope);
+                }, function (errorMsg) {
+                    toastr.error("No customer with this number");
+                    $scope.dataLoading = false;
+                });
+            }
+        };
+
+        function getMonthDiff(to, from) {
+            var months = to.getMonth() - from.getMonth()
+                + (12 * (to.getFullYear() - from.getFullYear()));
+
+            if (to.getDate() < from.getDate()) {
+                months--;
+            }
+            return months;
+
+        }
 
 
         getCustomersData();
@@ -245,7 +118,7 @@
         $scope.editCustomerInfo = function () {
             editModalBox = $uibModal.open({
                 animation: true,
-                templateUrl: 'app/pages/customer/edit.customer.html',
+                templateUrl: 'app/pages/customer/edit.search.html',
                 size: 'lg',
                 backdrop: 'static',
                 keyboard: false,
@@ -253,7 +126,7 @@
             });
         };
         $scope.openVisitDetailForm1 = function (item) {
-            $scope.visitData = item;
+            $scope.visitInfo = item;
             editModalBox = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/customer/view/view.visitingDetails1.html',
@@ -286,7 +159,12 @@
         };
 
         $scope.openOrderForm1 = function (item) {
-            $scope.orderInfo = $filter('filter')($scope.orderData, {VisitId: item.VisitId});
+            $scope.visitInfo = item;
+            $scope.visitDetailsData=item.VisitDetails;
+            console.info($scope.visitDetailsData);
+            console.info(item);
+            $scope.orderInfo = $filter('filter')($scope.visitDetailsData, {VisitId: item.VisitId});
+
             /*  if (item.VisitId == $scope.orderInfo.VisitId);
              for (var i in $scope.orderInfo) {
              $scope.DetailId = $scope.orderInfo.DetailId;
@@ -314,11 +192,16 @@
                 console.info($scope.visitsInfo);
                 if ($scope.visitsInfo[i].VisitId == 3066480 || $scope.visitsInfo[i].VisitId == 1908737) {
                     $scope.urgentFeedback = true;
-                }else {
+                } else {
                     $scope.notUrgentFeedback = true;
                 }
             }
         };
+
+        if ($stateParams.phoneno!=""){
+            $scope.newMobileNumber.info.mobile=$stateParams.phoneno;
+            $scope.searchCustomer(true);
+        }
 
         var ratingIndexes = ["Excellent", "Good", "Average"];
         $scope.ratings = ["Excellent", "Good", "Average"];
@@ -328,67 +211,203 @@
         $scope.subCategory = ["Attentive", "Beverages", "Buffet", "Clean &Crisp", "Relaxing & Comfortable", "Reservation Experience", "Kulfi Nation", "Courteous & Concern", "Starters"];
         var ratingIndexes2 = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
 
-        $scope.openFeedbackWindow = function (item) {
+       /* $scope.openFeedbackWindow = function (item) {
+            $scope.feedback = item.Feedback.Feedback;
             $scope.noFeedback = false;
-            $scope.feedbackByVisitsInfo = $filter('filter')($scope.CustomerFeedbackData, {VisitId: item.VisitId});
-            $scope.FeedbackVisitId = item.VisitId;
-            $scope.FeedId = $scope.getFeedbackIdByVisitId(item.VisitId);
             $scope.category = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
-            if (angular.isDefined($scope.FeedId)) {
-                var feedbackDetailsData = $filter('filter')($scope.feedbackDetailsMasterData, {FeedbackId: $scope.FeedId});
+            var feedbackDetailsData = [];
+            if (item.Feedback != null && angular.isDefined(item.Feedback.FeedbackId)) {
+                feedbackDetailsData = item.Feedback.FeedbackDetails;
             } else {
                 $scope.noFeedback = true;
             }
             console.info(feedbackDetailsData);
 
 
-            $scope.feedbackInfoData = [];
-            if ($scope.selected.customer.ID == 2168832) {
-                $scope.feedbackInfoData = [4, 2, 2, 0];
-            }
-            else if ($scope.selected.customer.ID == 2286670 || $scope.selected.customer.ID == 980645) {
-                $scope.feedbackInfoData = [2, 1, 3, 0];
-            } else {
-                $scope.feedbackInfoData = [5, 0, 3, 1];
-            }
-
-            /* var feedbackChartArr = [];
-             var ratingIndexes2 = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
-             for (var r in ratingIndexes2) {
-             var forThisFeedbackArr = $filter('FilterByCategory')(feedbackDetailsData, "" + ratingIndexes2[r] + "");
-             feedbackChartArr.push(forThisFeedbackArr.length);
-             }
-             $scope.feedbackInfoData.push(feedbackChartArr);*/
+            $scope.feedbackInfoData = [4, 2, 2, 0];
+            $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
+            $scope.feedbackRatingCount = [4, 2, 1, 2];
 
 
-            if ($scope.selected.customer.ID == 2168832) {
-                $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
-            }
-            else if ($scope.selected.customer.ID == 2286670 || $scope.selected.customer.ID == 980645) {
-                $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
-            } else {
-                $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
-            }
+            //graph1
+            var countFB = 0;
+            var gsiFB = 0;
+            var countSV = 0;
+            var gsiSV = 0;
+            var countAM = 0;
+            var gsiAM = 0;
+            var countBK = 0;
+            var gsiBK = 0;
+
+            var countExe = 0;
+            var countGood = 0;
+            var countAvg = 0;
 
 
-            $scope.feedbackRatingCount = [];
+            var fullDetailGraphGSI = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var fullDetailGraphGSICount = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            for (var i = 0; i < feedbackDetailsData.length; i++) {
 
-            if ($scope.selected.customer.ID == 2168832) {
-                $scope.feedbackRatingCount = [4, 2, 1, 2];
+                if (feedbackDetailsData[i].Category == "Food & Beverages") {
+                    countFB++;
+                    gsiFB += feedbackDetailsData[i].GSI;
+                } else if (feedbackDetailsData[i].Category == "Service") {
+                    countSV++;
+                    gsiSV += feedbackDetailsData[i].GSI;
+                } else if (feedbackDetailsData[i].Category == "Ambiance & Hygiene") {
+                    countAM++;
+                    gsiAM += feedbackDetailsData[i].GSI;
+                } else if (feedbackDetailsData[i].Category == "Booking") {
+                    countBK++;
+                    gsiBK += feedbackDetailsData[i].GSI;
+                }
+
+                if (feedbackDetailsData[i].Rating == "Excellent") {
+                    countExe++;
+                } else if (feedbackDetailsData[i].Rating == "Good") {
+                    countGood++;
+                } else if (feedbackDetailsData[i].Rating == "Average") {
+                    countAvg++;
+                }
+
+
+                var subCategory = ["Attentive", "Beverages", "Buffet", "Clean &Crisp", "Relaxing & Comfortable", "Reservation Experience", "Kulfi Nation", "Courteous & Concern", "Starters"];
+
+                for (var s = 0; s < subCategory.length; s++) {
+                    if (feedbackDetailsData[i].SubCategory == subCategory[s]) {
+                        fullDetailGraphGSICount[s]++;
+                        fullDetailGraphGSI[s] += feedbackDetailsData[i].GSI;
+                    }
+                }
+
+
             }
-            else if ($scope.selected.customer.ID == 2286670 || $scope.selected.customer.ID == 980645) {
-                $scope.feedbackRatingCount = [3, 1, 4, 1];
-            } else {
-                $scope.feedbackRatingCount = [2, 4, 1, 0];
-            }
-            /*         var feedbackWiseArr = [];
-             for (var f in ratingIndexes) {
-             var forThisArr = $filter('FilterByRating')(feedbackDetailsData, "" + ratingIndexes[f] + "");
-             feedbackWiseArr.push(forThisArr.length);
-             }
-             $scope.feedbackRatingCount = feedbackWiseArr;*/
+
+            $scope.feedbackInfoData = [Math.round(gsiFB / countFB), Math.round(gsiSV / countSV),
+                Math.round(gsiAM / countAM), Math.round(gsiBK / countBK)];
+
+            $scope.subcategory_wiseFeedbackInfoData = [
+                Math.round(fullDetailGraphGSI[0] / fullDetailGraphGSICount[0]),
+                Math.round(fullDetailGraphGSI[1] / fullDetailGraphGSICount[1]),
+                Math.round(fullDetailGraphGSI[2] / fullDetailGraphGSICount[2]),
+                Math.round(fullDetailGraphGSI[3] / fullDetailGraphGSICount[3]),
+                Math.round(fullDetailGraphGSI[4] / fullDetailGraphGSICount[4]),
+                Math.round(fullDetailGraphGSI[5] / fullDetailGraphGSICount[5]),
+                Math.round(fullDetailGraphGSI[6] / fullDetailGraphGSICount[6]),
+                Math.round(fullDetailGraphGSI[7] / fullDetailGraphGSICount[7]),
+                Math.round(fullDetailGraphGSI[8] / fullDetailGraphGSICount[8])
+            ];
+
+            $scope.feedbackRatingCount = [countExe, countGood, countAvg];
+
 
             $scope.pieOptions = {legend: {display: true}};
+            editModalBox = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/customer/view/view.feedbackDetails.html',
+                size: 'lg',
+                backdrop: 'static',
+                keyboard: false,
+                scope: $scope
+            });
+        };
+*/
+
+
+        $scope.openFeedbackWindow = function (item) {
+            $scope.feedback = item.Feedback.Feedback;
+            $scope.noFeedback = false;
+            $scope.category = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
+            var feedbackDetailsData = [];
+            if (item.Feedback != null && angular.isDefined(item.Feedback.FeedbackId)) {
+                feedbackDetailsData = item.Feedback.FeedbackDetails;
+            } else {
+                $scope.noFeedback = true;
+            }
+            console.info(feedbackDetailsData);
+            $timeout(function() { // THE FIX
+
+
+
+                $scope.feedbackInfoData = [4, 2, 2, 0];
+                $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
+                $scope.feedbackRatingCount = [4, 2, 1, 2];
+
+
+                //graph1
+                var countFB = 0;
+                var gsiFB = 0;
+                var countSV = 0;
+                var gsiSV = 0;
+                var countAM = 0;
+                var gsiAM = 0;
+                var countBK = 0;
+                var gsiBK = 0;
+
+                var countExe = 0;
+                var countGood = 0;
+                var countAvg = 0;
+
+
+                var fullDetailGraphGSI = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                var fullDetailGraphGSICount = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                for (var i = 0; i < feedbackDetailsData.length; i++) {
+
+                    if (feedbackDetailsData[i].Category == "Food & Beverages") {
+                        countFB++;
+                        gsiFB += feedbackDetailsData[i].GSI;
+                    } else if (feedbackDetailsData[i].Category == "Service") {
+                        countSV++;
+                        gsiSV += feedbackDetailsData[i].GSI;
+                    } else if (feedbackDetailsData[i].Category == "Ambiance & Hygiene") {
+                        countAM++;
+                        gsiAM += feedbackDetailsData[i].GSI;
+                    } else if (feedbackDetailsData[i].Category == "Booking") {
+                        countBK++;
+                        gsiBK += feedbackDetailsData[i].GSI;
+                    }
+
+                    if (feedbackDetailsData[i].Rating == "Excellent") {
+                        countExe++;
+                    } else if (feedbackDetailsData[i].Rating == "Good") {
+                        countGood++;
+                    } else if (feedbackDetailsData[i].Rating == "Average") {
+                        countAvg++;
+                    }
+
+
+                    var subCategory = ["Attentive", "Beverages", "Buffet", "Clean &Crisp", "Relaxing & Comfortable", "Reservation Experience", "Kulfi Nation", "Courteous & Concern", "Starters"];
+
+                    for (var s = 0; s < subCategory.length; s++) {
+                        if (feedbackDetailsData[i].SubCategory == subCategory[s]) {
+                            fullDetailGraphGSICount[s]++;
+                            fullDetailGraphGSI[s] += feedbackDetailsData[i].GSI;
+                        }
+                    }
+
+
+                }
+
+                $scope.feedbackInfoData = [Math.round(gsiFB / countFB), Math.round(gsiSV / countSV),
+                    Math.round(gsiAM / countAM), Math.round(gsiBK / countBK)];
+
+                $scope.subcategory_wiseFeedbackInfoData = [
+                    Math.round(fullDetailGraphGSI[0] / fullDetailGraphGSICount[0]),
+                    Math.round(fullDetailGraphGSI[1] / fullDetailGraphGSICount[1]),
+                    Math.round(fullDetailGraphGSI[2] / fullDetailGraphGSICount[2]),
+                    Math.round(fullDetailGraphGSI[3] / fullDetailGraphGSICount[3]),
+                    Math.round(fullDetailGraphGSI[4] / fullDetailGraphGSICount[4]),
+                    Math.round(fullDetailGraphGSI[5] / fullDetailGraphGSICount[5]),
+                    Math.round(fullDetailGraphGSI[6] / fullDetailGraphGSICount[6]),
+                    Math.round(fullDetailGraphGSI[7] / fullDetailGraphGSICount[7]),
+                    Math.round(fullDetailGraphGSI[8] / fullDetailGraphGSICount[8])
+                ];
+
+                $scope.feedbackRatingCount = [countExe, countGood, countAvg];
+
+
+                $scope.pieOptions = {legend: {display: true}};
+            });
             editModalBox = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/customer/view/view.feedbackDetails.html',
@@ -402,61 +421,82 @@
         $scope.gotoVisitPage = function (item) {
             $location.path("/customer/view/" + item);
         };
+        $scope.chartSelected = function(){
+            $scope.isChartTabSelected = true;
+        };
+        $scope.chartDeSelected = function(){
+            $scope.isChartTabSelected = false;
+        };
 
-        $scope.chart = function () {
-            //graph2
-
-            $scope.visitorData = [];
-            if ($scope.selected.customer.ID == 2168832) {
-                $scope.categoryWiseFeedbackData = [100, 50, 75, 25];
-            }
-            else if ($scope.selected.customer.ID == 2286670 || $scope.selected.customer.ID == 980645) {
-                $scope.categoryWiseFeedbackData = [25, 50, 100, 75];
-            } else {
-                $scope.categoryWiseFeedbackData = [75, 25, 100, 50];
-            }
+    }
 
 
-            var visitorArr = $scope.visitsInfo;
-            var chartArr = [];
-            for (var m in monthIndexes) {
-                var forThisMonthArr = $filter('FilterByMonth')(visitorArr, "" + monthIndexes[m] + "/");
-                chartArr.push(forThisMonthArr.length);
-            }
-            $scope.visitorData.push(chartArr);
 
-            //graph1
-            var feedBackGraphData = $filter('filter')($scope.feedbackData, {CustomerId: $scope.selected.customer.ID});
-            console.info(feedBackGraphData);
 
-            $scope.feedbackCountReportData = [2, 1, 0];
+    function loadMainChart($scope) {
+        //graph2
 
-            if ($scope.selected.customer.ID == 2168832) {
-                $scope.feedbackCountReportData = [2, 1, 0];
-            }
-            else if ($scope.selected.customer.ID == 2286670 || $scope.selected.customer.ID == 980645) {
-                $scope.feedbackCountReportData = [0, 2, 1];
-            } else {
-                $scope.feedbackCountReportData = [1, 0, 2];
-            }
-            $scope.chartOptions = {legend: {display: true}};
-            $scope.options = {
-                scales: {
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Ratings'
-                        }
-                    }]
+        // $scope.visitorData = [];
+
+        $scope.categoryWiseFeedbackData = [100, 50, 75, 25];
+
+        //graph1
+        var countFB = 0;
+        var gsiFB = 0;
+        var countSV = 0;
+        var gsiSV = 0;
+        var countAM = 0;
+        var gsiAM = 0;
+        var countBK = 0;
+        var gsiBK = 0;
+
+        var countExe = 0;
+        var countGood = 0;
+        var countAvg = 0;
+
+        for (var i = 0; i < $scope.visitsData.length; i++) {
+            if ($scope.visitsData[i].Feedback != null) {
+                var feedDetails = $scope.visitsData[i].Feedback.FeedbackDetails;
+                for (var j = 0; j < feedDetails.length; j++) {
+                    if (feedDetails[j].Category == "Food & Beverages") {
+                        countFB++;
+                        gsiFB += feedDetails[j].GSI;
+                    } else if (feedDetails[j].Category == "Service") {
+                        countSV++;
+                        gsiSV += feedDetails[j].GSI;
+                    } else if (feedDetails[j].Category == "Ambiance & Hygiene") {
+                        countAM++;
+                        gsiAM += feedDetails[j].GSI;
+                    } else if (feedDetails[j].Category == "Booking") {
+                        countBK++;
+                        gsiBK += feedDetails[j].GSI;
+                    }
+
+                    if (feedDetails[j].Rating == "Excellent") {
+                        countExe++;
+                    } else if (feedDetails[j].Rating == "Good") {
+                        countGood++;
+                    } else if (feedDetails[j].Rating == "Average") {
+                        countAvg++;
+                    }
                 }
-            };
-            /*  var chart2Arr = [];
-             for (var f in ratingIndexes) {
-             var forThisArr = $filter('FilterByOverallRating')(feedBackGraphData, "" + ratingIndexes[f] + "");
-             chart2Arr.push(forThisArr.length);
-             }
-             $scope.feedbackCountReportData.push(chart2Arr);*/
+            }
 
+        }
+        $scope.categoryWiseFeedbackData = [Math.round(gsiFB / countFB), Math.round(gsiSV / countSV),
+            Math.round(gsiAM / countAM), Math.round(gsiBK / countBK)];
+
+        $scope.feedbackCountReportData = [countExe, countGood, countAvg];
+        $scope.chartOptions = {legend: {display: true}};
+        $scope.options = {
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Ratings'
+                    }
+                }]
+            }
         };
 
     }
@@ -517,7 +557,7 @@
     function routeConfig($stateProvider) {
         $stateProvider
             .state('customer', {
-                url: '/customer',
+                url: '/customer/:phoneno',
                 controller: customerCtrl,
                 templateUrl: 'app/pages/customer/customer.html',
                 title: 'Customer',

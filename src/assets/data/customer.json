@@ -1,0 +1,170 @@
+{
+  "customerInfo": {
+    "ID": 957345,
+    "Name": "Mr. Pradip Narayanan",
+    "PhoneNo": 9941988802,
+    "EmailId": "NULL",
+    "LastLocation": "CCN01",
+    "DOB": "NULL",
+    "DOA": "NULL",
+    "CompanyName": "NULL",
+    "CreatedOn": "52:39.0",
+    "LastVisitedOn": "00:00.0",
+    "NoofVisit": 1,
+    "LastGSIPerc": 97.22,
+    "AppUser": 0
+  },
+  "visitHead": {
+    "Session": "Dinner",
+    "TotalPax": 5,
+    "Adult": 4,
+    "Child": 1,
+    "ConfirmTime": "1754-01-01 19:22:13.267",
+    "SeatedTime": "1754-01-01 19:14:07.017",
+    "SettlementTime": "1754-01-01 20:53:16.713",
+    "Status": "Dinner",
+    "TableNo": 41,
+    "BillNo": "00000P0025000106597",
+    "Amount": 1727,
+    "ReservationType": "Telephone",
+    "BBQFestival": "NULL",
+    "CalendarFestival": "NULL",
+    "VisitRemark": "NULL",
+    "CarNo": "NULL"
+  },
+  "visitDetails": [
+    {
+      "DetailId": 1100,
+      "VisitId": 350,
+      "CustomerId": 957345,
+      "ItemNo": "I00006879",
+      "ItemName": "DINNER NONVEG WED TO SUNDY",
+      "Category": "FOOD - NON VEG",
+      "ProductGroup": "BUFFET NONVEG",
+      "Division": "FOOD",
+      "Quantity": 2,
+      "Amount": 936,
+      "TotalAmount": -1476
+    },
+    {
+      "DetailId": 1101,
+      "VisitId": 350,
+      "CustomerId": 957345,
+      "ItemNo": "I00006880",
+      "ItemName": "DINNER KID",
+      "Category": "FOOD - VEG",
+      "ProductGroup": "BUFFET VEG",
+      "Division": "FOOD",
+      "Quantity": 1,
+      "Amount": 250,
+      "TotalAmount": -250
+    },
+    {
+      "DetailId": 1102,
+      "VisitId": 350,
+      "CustomerId": 957345,
+      "ItemNo": "R000010189",
+      "ItemName": "Kids Eat Free",
+      "Category": "FOOD - VEG",
+      "ProductGroup": "BUFFET VEG",
+      "Division": "FOOD",
+      "Quantity": 1,
+      "Amount": 1,
+      "TotalAmount": -1
+    }
+  ],
+  "feedbackHead": {
+    "OverallRating": "Excellent",
+    "GSI": 97.22,
+    "Fedback": "My overall feedback was good",
+    "UrgentFeed": 0,
+    "UrgentFeedStatus": "NULL",
+    "ActionTaken": "NULL",
+    "InternalAction": "NULL",
+    "NextVisitId": "NULL"
+  },
+  "feedbackDetails": [
+    {
+      "DetailId": 10,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Ambiance & Hygiene",
+      "SubCategory": "Relaxing & Comfortable",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 11,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Booking",
+      "SubCategory": "Reservation Experience",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 12,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Food & Beverages",
+      "SubCategory": "Beverages",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 13,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Ambiance & Hygiene",
+      "SubCategory": "Clean &Crisp",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 14,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Food & Beverages",
+      "SubCategory": "Buffet",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 15,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Service",
+      "SubCategory": "Courteous & Concern",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 16,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Food & Beverages",
+      "SubCategory": "Kulfi Nation",
+      "Rating": "Excellent",
+      "GSI": 100
+    },
+    {
+      "DetailId": 17,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Food & Beverages",
+      "SubCategory": "Starters",
+      "Rating": "Good",
+      "GSI": 75
+    },
+    {
+      "DetailId": 18,
+      "FeedbackId": 2,
+      "CustomerId": 957345,
+      "Category": "Service",
+      "SubCategory": "Attentive",
+      "Rating": "Excellent",
+      "GSI": 100
+    }
+  ]
+}
+

@@ -35,9 +35,10 @@ function browserSyncInit(baseDir, browser) {
    */
   // server.middleware = proxyMiddleware('/rest', {target: 'http://mpal-uniquemedia.rhcloud.com', changeOrigin: true});
 
-  var apiserver = proxyMiddleware('/rest', {
+  var apiserver = proxyMiddleware('/GetCustomerProfile', {
     //target: 'http://edufiler-uniquemedia.rhcloud.com/',
-      target: 'http://192.168.1.229:8080/educational/',
+      //target: 'http://192.168.1.229:8080/educational/',
+      target: 'http://crm.bnhl.in/CRMProfile/Service1.svc/',
     changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
     logLevel: 'debug'
   });

@@ -12,7 +12,7 @@
                     <div class="panel panel-default text-center">
                         <div class="panel-body">
                             <h6><b>Customer Id</b></h6>
-                            <h3 ng-bind="selected.customer.ID"></h3>
+                            <h3>{{visitInfo.CustomerId}}</h3>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="panel panel-default text-center">
                         <div class="panel-body">
                             <h6><b>Visit Id</b></h6>
-                            <h3>{{visitData.VisitId}}</h3>
+                            <h3>{{visitInfo.VisitId}}</h3>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="panel panel-default text-center">
                         <div class="panel-body">
                             <h6><b>OutLet Id</b></h6>
-                            <h3>{{visitData.OutletId}}</h3>
+                            <h3>{{visitInfo.OutletId}}</h3>
                         </div>
                     </div>
                 </div>
@@ -43,19 +43,19 @@
                                 <tbody>
                                 <tr>
                                     <td class="active"><b>Reservation Date</b></td>
-                                    <td><b>{{visitData.ReservationDate}}</b></td>
+                                    <td><b>{{visitInfo.ReservationDate |dateFilter}}</b></td>
                                     <td class="active"><b>Reservation Time</b></td>
-                                    <td><b>{{visitData.ReservationTime}}</b></td>
+                                    <td><b>{{visitInfo.ReservationTime| timeFilter}}</b></td>
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Adult</b></td>
-                                    <td><b>{{visitData.Adult}}</b></td>
+                                    <td><b>{{visitInfo.Adult}}</b></td>
                                     <td class="active"><b>Child</b></td>
-                                    <td><b>{{visitData.Child}}</b></td>
+                                    <td><b>{{visitInfo.Child}}</b></td>
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Reservation Type</b></td>
-                                    <td><b>{{visitData.ReservationType}}</b></td>
+                                    <td><b>{{visitInfo.ReservationType}}</b></td>
                                     <td class="active"><b>-</b></td>
                                     <td><b>-</b></td>
                                 </tr>
@@ -71,22 +71,22 @@
                                 <tbody>
                                 <tr>
                                     <td class="active"><b>Confirm Time</b></td>
-                                    <td><b>{{visitData.ConfirmTime}}</b></td>
+                                    <td><b>{{visitInfo.ConfirmTime| timeFilter}}</b></td>
                                     <td class="active"><b>Seated Time</b></td>
-                                    <td><b>{{visitData.SeatedTime}}</b></td>
+                                    <td><b>{{visitInfo.SeatedTime| timeFilter}}</b></td>
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Settlement Time</b></td>
-                                    <td><b>{{visitData.SettlementTime}}</b></td>
+                                    <td><b>{{visitInfo.SettlementTime| timeFilter}}</b></td>
                                     <td class="active"><b>Total Amount</b></td>
-                                    <td><b>{{visitData.Amount}}</b></td>
+                                    <td><b>{{visitInfo.Amount}}</b></td>
 
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Table No</b></td>
-                                    <td><b>{{visitData.TableNo}}</b></td>
+                                    <td><b>{{visitInfo.TableNo}}</b></td>
                                     <td class="active"><b>Bill No</b></td>
-                                    <td><b>{{visitData.BillNo}}</b></td>
+                                    <td><b>{{visitInfo.BillNo}}</b></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -100,19 +100,19 @@
                                 <tbody>
                                 <tr>
                                     <td class="active"><b>BBQ Festival</b></td>
-                                    <td><b>{{visitData.BBQFestival|emptyInputFilter}}</b></td>
+                                    <td><b>{{visitInfo.BBQFestival|emptyInputFilter}}</b></td>
                                     <td class="active"><b>Calendar Festival</b></td>
-                                    <td><b>{{visitData.CalendarFestival|emptyInputFilter}}</b></td>
+                                    <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Calendar Festival</b></td>
-                                    <td><b>{{visitData.CalendarFestival|emptyInputFilter}}</b></td>
+                                    <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
                                     <td class="active"><b>Visit Remark</b></td>
-                                    <td><b>{{visitData.VisitRemark|emptyInputFilter}}</b></td>
+                                    <td><b>{{visitInfo.VisitRemark|emptyInputFilter}}</b></td>
                                 </tr>
                                 <tr>
                                     <td class="active"><b>Car No</b></td>
-                                    <td><b>{{visitData.CarNo|emptyInputFilter}}</b></td>
+                                    <td><b>{{visitInfo.CarNo|emptyInputFilter}}</b></td>
                                     <td class="active"><b></b></td>
                                     <td><b></b></td>
                                 </tr>

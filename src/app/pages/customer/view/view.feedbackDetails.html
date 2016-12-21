@@ -3,10 +3,64 @@
         <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
             <em class="fa fa-close sn-link-close"></em>
         </button>
-        <h4 class="modal-title">Feedback For-<b><span ng-bind="selected.customer.Name"></span></b>
+        <h4 class="modal-title">FEEDBACK FOR - <span ng-bind=customerData.Name></span></h4>
         </h4>
     </div>
     <div class="modal-body">
+        <uib-tabset active="activeTab">
+            <uib-tab index="0" heading="Feedback">
+                <div class="panel profile-panel">
+                    <div class="panel-body">
+                        <h4 ng-bind-html="feedback"></h4>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="Graphs" select="chartSelected()"  deselect="chartDeSelected()">
+
+            </uib-tab>
+        </uib-tabset>
+        <div class="panel panel-default" id="gChartOut" ng-if="isChartTabSelected">
+            <div class="panel-body">
+                <div class="col-sm-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Category-wise Feedback Report</h3></div>
+                        <div class="panel-body">
+                            <canvas class="chart chart-bar"
+                                    chart-data="feedbackInfoData" chart-colors="colors" chart-labels="category">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5" >
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ratings-wise Feedback Report</h3></div>
+                        <div class="panel-body">
+                            <canvas class="chart chart-pie"
+                                    chart-data="feedbackRatingCount" chart-labels="ratings"
+                                    chart-colors="colors"
+                                    chart-options="pieOptions">
+                            </canvas>
+                            <br><br><br><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Category-wise Feedback Report</h3></div>
+                        <div class="panel-body">
+                            <canvas class="chart chart-bar"
+                                    chart-data="subcategory_wiseFeedbackInfoData" chart-colors="colors"
+                                    chart-options="options"
+                                    chart-labels="subCategory">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--    <div class="col-sm-12" ng-hide="noFeedback">
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
@@ -35,48 +89,10 @@
                     </div>
                 </div>
             </div>-->
-        <div class="col-sm-7" ng-hide="noFeedback">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Category-wise Feedback Report</h3></div>
-                <div class="panel-body">
-                    <canvas class="chart chart-bar"
-                            chart-data="feedbackInfoData" chart-colors="colors" chart-labels="category">
-                    </canvas>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5" ng-hide="noFeedback">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Ratings-wise Feedback Report</h3></div>
-                <div class="panel-body">
-                    <canvas class="chart chart-pie"
-                            chart-data="feedbackRatingCount" chart-labels="ratings"
-                            chart-colors="colors"
-                            chart-options="pieOptions">
-                    </canvas><br><br><br><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12" ng-hide="noFeedback">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Category-wise Feedback Report</h3></div>
-                <div class="panel-body">
-                    <canvas class="chart chart-bar"
-                            chart-data="subcategory_wiseFeedbackInfoData" chart-colors="colors" chart-options="options"
-                            chart-labels="subCategory">
-                    </canvas>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12" ng-show="noFeedback">
-            <h2 class="text-shadow">Nothing to Show...</h2>
-        </div>
-        <div class="modal-footer">
-            &nbsp;
-        </div>
+    </div>
+    <div class="modal-footer">
+        &nbsp;
+
     </div>
 </div>
 

@@ -44,6 +44,9 @@ $panel-heading-font-size: 16px;
   margin-bottom: 6px;
   margin-top: -5px;
 }
+.gap-2 {
+  margin-top: -5px;
+}
 
 .panel.panel-blur {
   $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
@@ -150,10 +153,18 @@ $panel-heading-font-size: 16px;
 }
 
 .visit-text {
+   font-size: 13px;
+   color: #1f5298;
+   padding-bottom: 14px;
+ }
+.resolved-panel {
+  margin-bottom:0px
+}
+.visit-text-2 {
   font-size: 12px;
   color: #1f5298;
+  margin-bottom:-3px
 }
-
 .red-panel {
   > .panel-body {
     padding: 15px 22px;
@@ -337,4 +348,10 @@ $panel-heading-font-size: 16px;
   > .panel-footer {
     color: $default-text;
   }
+}
+
+.panel-vertical-scroll{
+  overflow-y: scroll;
+  height: 670px;
+  width: 100%;
 }

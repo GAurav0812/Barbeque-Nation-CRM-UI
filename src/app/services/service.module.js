@@ -13,13 +13,13 @@
             };
 
             function makeRequestSuccess(response) {
-                if (response.data.messageType == "SUCCESS") {
+               // if (response.data.messageType == "SUCCESS") {
                     return response.data;
-                } else if(response.data.messageType == "UNAUTHORIZED") {
+                /*} else if(response.data.messageType == "UNAUTHORIZED") {
                     toastr.error("Unauthorized access!","Error");
                 } else {
                     return $q.reject(response.data.message);
-                }
+                }*/
             }
 
             function makeRequestFailed(response) {

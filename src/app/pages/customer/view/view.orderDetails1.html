@@ -3,39 +3,78 @@
         <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
             <em class="fa fa-close sn-link-close"></em>
         </button>
-        <h4 class="modal-title">Order Details For-<span ng-bind=myData.Name></span></h4>
+        <h4 class="modal-title">VISIT/ORDER DETAILS FOR - <span ng-bind=customerData.Name></span></h4>
     </div>
     <div class="modal-body">
+
+
         <uib-tabset active="activeTab">
-            <uib-tab index="0" heading="Information">
-                <div class="panel info-panel info-panel-padding">
+            <uib-tab index="0" heading="Visit">
+                <div class="panel profile-panel">
                     <div class="panel-body">
-                        <div class="col-xs-12">
-                            <dl class="dl-horizontal">
-                                <dt class="info">Visit Id</dt>
-                                <dd>{{visitData.VisitId}}</dd>
-                            </dl>
-                            <dl class="dl-horizontal">
-                                <dt class="info">SeatedTime</dt>
-                                <dd>{{visitData.SeatedTime}}</dd>
-                            </dl>
-                            <dl class="dl-horizontal">
-                                <dt class="info">Settlement Time</dt>
-                                <dd>{{visitData.SettlementTime}}</dd>
-                            </dl>
-                            <dl class="dl-horizontal">
-                                <dt class="info">Table Number</dt>
-                                <dd>{{visitData.TableNo}}</dd>
-                            </dl>
-                            <dl class="dl-horizontal">
-                                <dt class="info">Bill Number</dt>
-                                <dd>{{visitData.BillNo}}</dd>
-                            </dl>
-                        </div>
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td class="active"><b>Reservation Date</b></td>
+                                <td><b>{{visitInfo.ReservationDate |dateFilter}}</b></td>
+                                <td class="active"><b>Reservation Time</b></td>
+                                <td><b>{{visitInfo.ReservationTime| timeFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Adult</b></td>
+                                <td><b>{{visitInfo.Adult}}</b></td>
+                                <td class="active"><b>Child</b></td>
+                                <td><b>{{visitInfo.Child}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Reservation Type</b></td>
+                                <td><b>{{visitInfo.ReservationType}}</b></td>
+                                <td class="active"><b>-</b></td>
+                                <td><b>-</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Confirm Time</b></td>
+                                <td><b>{{visitInfo.ConfirmTime| timeFilter}}</b></td>
+                                <td class="active"><b>Seated Time</b></td>
+                                <td><b>{{visitInfo.SeatedTime| timeFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Settlement Time</b></td>
+                                <td><b>{{visitInfo.SettlementTime| timeFilter}}</b></td>
+                                <td class="active"><b>Total Amount</b></td>
+                                <td><b>{{visitInfo.Amount}}</b></td>
+
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Table No</b></td>
+                                <td><b>{{visitInfo.TableNo}}</b></td>
+                                <td class="active"><b>Bill No</b></td>
+                                <td><b>{{visitInfo.BillNo}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>BBQ Festival</b></td>
+                                <td><b>{{visitInfo.BBQFestival|emptyInputFilter}}</b></td>
+                                <td class="active"><b>Calendar Festival</b></td>
+                                <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Calendar Festival</b></td>
+                                <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
+                                <td class="active"><b>Visit Remark</b></td>
+                                <td><b>{{visitInfo.VisitRemark|emptyInputFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Car No</b></td>
+                                <td><b>{{visitInfo.CarNo|emptyInputFilter}}</b></td>
+                                <td class="active"><b></b></td>
+                                <td><b></b></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </uib-tab>
-            <uib-tab index="1" heading="Orders">
+            <uib-tab index="2" heading="Orders">
                 <div class="panel profile-panel">
                     <div class="panel-body">
                         <table class="table table-bordered" st-table="orderInfo">
@@ -77,6 +116,10 @@
                 </div>
             </uib-tab>
         </uib-tabset>
+
+
+
+
     </div>
     <div class="modal-footer">
         &nbsp;

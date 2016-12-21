@@ -9,12 +9,29 @@
         .filter('statusFullForm', statusFullForm)
         .filter('subjectAssignTypeFilter', subjectAssignTypeFilter)
         .filter('emptyInputFilter', emptyInputFilter)
-        .filter('noValueFilter', noValueFilter);
+        .filter('noValueFilter', noValueFilter)
+        .filter('dateFilter', dateFilter)
+        .filter('timeFilter', timeFilter);
+
 
 
     function statusFullForm() {
         return function (value) {
             return value == "I" ? "InActive" : "Active";
+        };
+    }
+
+    function dateFilter($filter) {
+        return function (value) {
+            var dt = new Date(value);
+            return $filter('date')(dt, 'yyyy-MM-dd')
+        };
+    }
+
+    function timeFilter($filter) {
+        return function (value) {
+            var dt = new Date(value);
+            return $filter('date')(dt, 'hh:mm:ss a')
         };
     }
 

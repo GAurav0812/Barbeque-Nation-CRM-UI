@@ -8,8 +8,8 @@
     angular.module('UApps.pages', [
         'ui.router',
 
-        'UApps.pages.dashboard',
-        'UApps.pages.customer',
+        //'UApps.pages.dashboard',
+        'UApps.pages.customer'
 
 
 
@@ -19,12 +19,14 @@
             // keep user logged in after page refresh
 
             //Read authentication from cookies
-            AuthenticationService.init();
+            AuthenticationService.setCredentials("admin", "admin", "1");
+
+
 
             $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                setPageLocation();
+              //  setPageLocation();
             });
-            setPageLocation();
+            //setPageLocation();
 
             function setPageLocation() {
                 if (AuthenticationService.authenticate()) {

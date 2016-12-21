@@ -37,9 +37,12 @@
     font-weight: $font-normal;
     font-size: 13px;
   }
-  .note-text{
-    color:#F51F06;
-  }
+
+}
+.note-text{
+  color:#F51F06;
+  padding-top: 25px;
+  text-align: center;
 }
 
 .form-control {
