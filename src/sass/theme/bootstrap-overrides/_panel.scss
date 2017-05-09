@@ -117,13 +117,17 @@ $panel-heading-font-size: 16px;
 
  }
 .red-icon-text{
-  color: #ff2038;
+  color: #e85656;
   vertical-align: middle;
 }
 
 .green-icon-text{
-  color: #16a81e;
+  color: #31a715;
   vertical-align: middle;
+}
+
+.text-raised {
+  box-shadow: 0px 2px 2px 0px rgba(147, 147, 147, 0.60);
 }
 
 .green-text {
@@ -133,6 +137,9 @@ $panel-heading-font-size: 16px;
   border-radius: 2px;
   padding: 1px 2px 1px 2px;
 
+}
+.panel-background {
+  background-color: rgba(26, 182, 39, 0.42);
 }
 
 .text-shadow {
@@ -354,4 +361,15 @@ $panel-heading-font-size: 16px;
   overflow-y: scroll;
   height: 670px;
   width: 100%;
+}
+
+
+.reasons{
+  line-height: 1.6;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.reasonItem{
+  display: inline-block;
 }

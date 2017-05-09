@@ -12,7 +12,7 @@
         .filter("FilterByCategory", FilterByCategory)
         .filter("FilterByOverallRating", FilterByOverallRating);
 
-    function customerCtrl($scope, $stateParams,$location, $uibModal,toastr, $http, $filter, $timeout) {
+    function customerCtrl($scope, $stateParams, $location, $uibModal, toastr, $http, $filter, $timeout) {
 
         var editModalBox;
 
@@ -20,7 +20,7 @@
         $scope.urgentFeedback = false;
         $scope.notUrgentFeedback = false;
         $scope.dataLoading = false;
-        $scope.noValidCustomer=false;
+        $scope.noValidCustomer = false;
         $scope.isChartTabSelected = false;
         $scope.newMobileNumber = {
             form: {},
@@ -28,10 +28,31 @@
                 mobile: ""
             }
         };
+        $scope.alcoholic = false;
+        $scope.noAlcoholic = false;
 
-        $scope.customerData = {}
+        $scope.alcoholicFilter = function (item) {
+            return item.Category === 'ALCOHLIC BEVERAGES';
+        };
+
+
+        $scope.nonAlcoholicFilter = function (item) {
+            return item.Category === 'NON-ALCOHLIC BEVERAGES';
+
+
+        };
+        var LoadingModal;
+        $scope.customerData = {};
         $scope.searchCustomer = function (isValid) {
             if (isValid) {
+                LoadingModal = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'app/pages/Loading.html',
+                    size: 'sm',
+                    backdrop: 'static',
+                    keyboard: false,
+                    scope: $scope
+                });
                 /*//$http.jsonp('http://crm.bnhl.in/CRMProfile/Service1.svc/GetCustomerProfile/' + number + '&callback=JSON_CALLBACK')
 
                  $http({
@@ -46,7 +67,7 @@
                  console.log(data)
                  });*/
 
-               // $http.get("../Service1.svc/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
+                // $http.get("../Service1.svc/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
                 $http.get("/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
                     //console.info(response.data);
                     $scope.customerData = response.data.customerinfo;
@@ -72,6 +93,7 @@
                     $scope.LastVisitMonth = getMonthDiff(new Date(), dt);
                     //VisitDetailsArrayStoring
                     $scope.visitDetailsData = $scope.visitsData.VisitDetails;
+                    LoadingModal.close();
                     loadMainChart($scope);
                 }, function (errorMsg) {
                     toastr.error("No customer with this number");
@@ -92,20 +114,20 @@
         }
 
 
-        getCustomersData();
+        /*  getCustomersData();
 
-        function getCustomersData() {
-            $http.get("assets/data/customers.json").then(function (response) {
-                $scope.customersData = response.data;
-                var customerArr = response.data;
-            });
-            $http.get("assets/data/visitDetail.json").then(function (response) {
-                $scope.orderData = response.data;
-            });
-            $http.get("assets/data/feedbackDetails.json").then(function (response) {
-                $scope.feedbackDetailsMasterData = response.data;
-            });
-        }
+         function getCustomersData() {
+         $http.get("assets/data/customers.json").then(function (response) {
+         $scope.customersData = response.data;
+         var customerArr = response.data;
+         });
+         $http.get("assets/data/visitDetail.json").then(function (response) {
+         $scope.orderData = response.data;
+         });
+         $http.get("assets/data/feedbackDetails.json").then(function (response) {
+         $scope.feedbackDetailsMasterData = response.data;
+         });
+         }*/
 
         /*   function getCustomerDetailsById(id) {
          for (var i in $scope.customersData) {
@@ -118,7 +140,7 @@
         $scope.editCustomerInfo = function () {
             editModalBox = $uibModal.open({
                 animation: true,
-                templateUrl: 'app/pages/customer/edit.search.html',
+                templateUrl: 'app/pages/customer/edit.customer.html',
                 size: 'lg',
                 backdrop: 'static',
                 keyboard: false,
@@ -160,7 +182,7 @@
 
         $scope.openOrderForm1 = function (item) {
             $scope.visitInfo = item;
-            $scope.visitDetailsData=item.VisitDetails;
+            $scope.visitDetailsData = item.VisitDetails;
             console.info($scope.visitDetailsData);
             console.info(item);
             $scope.orderInfo = $filter('filter')($scope.visitDetailsData, {VisitId: item.VisitId});
@@ -197,10 +219,11 @@
                 }
             }
         };
-
-        if ($stateParams.phoneno!=""){
-            $scope.newMobileNumber.info.mobile=$stateParams.phoneno;
+        $scope.isParamNumber = false;
+        if ($stateParams.phoneno != "") {
+            $scope.newMobileNumber.info.mobile = $stateParams.phoneno;
             $scope.searchCustomer(true);
+            /*  $scope.isParamNumber=true;*/
         }
 
         var ratingIndexes = ["Excellent", "Good", "Average"];
@@ -210,108 +233,6 @@
         $scope.category = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
         $scope.subCategory = ["Attentive", "Beverages", "Buffet", "Clean &Crisp", "Relaxing & Comfortable", "Reservation Experience", "Kulfi Nation", "Courteous & Concern", "Starters"];
         var ratingIndexes2 = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
-
-       /* $scope.openFeedbackWindow = function (item) {
-            $scope.feedback = item.Feedback.Feedback;
-            $scope.noFeedback = false;
-            $scope.category = ["Food & Beverages", "Service", "Ambiance & Hygiene", "Booking"];
-            var feedbackDetailsData = [];
-            if (item.Feedback != null && angular.isDefined(item.Feedback.FeedbackId)) {
-                feedbackDetailsData = item.Feedback.FeedbackDetails;
-            } else {
-                $scope.noFeedback = true;
-            }
-            console.info(feedbackDetailsData);
-
-
-            $scope.feedbackInfoData = [4, 2, 2, 0];
-            $scope.subcategory_wiseFeedbackInfoData = [100, 25, 100, 75, 0, 75, 0, 25, 100];
-            $scope.feedbackRatingCount = [4, 2, 1, 2];
-
-
-            //graph1
-            var countFB = 0;
-            var gsiFB = 0;
-            var countSV = 0;
-            var gsiSV = 0;
-            var countAM = 0;
-            var gsiAM = 0;
-            var countBK = 0;
-            var gsiBK = 0;
-
-            var countExe = 0;
-            var countGood = 0;
-            var countAvg = 0;
-
-
-            var fullDetailGraphGSI = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-            var fullDetailGraphGSICount = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-            for (var i = 0; i < feedbackDetailsData.length; i++) {
-
-                if (feedbackDetailsData[i].Category == "Food & Beverages") {
-                    countFB++;
-                    gsiFB += feedbackDetailsData[i].GSI;
-                } else if (feedbackDetailsData[i].Category == "Service") {
-                    countSV++;
-                    gsiSV += feedbackDetailsData[i].GSI;
-                } else if (feedbackDetailsData[i].Category == "Ambiance & Hygiene") {
-                    countAM++;
-                    gsiAM += feedbackDetailsData[i].GSI;
-                } else if (feedbackDetailsData[i].Category == "Booking") {
-                    countBK++;
-                    gsiBK += feedbackDetailsData[i].GSI;
-                }
-
-                if (feedbackDetailsData[i].Rating == "Excellent") {
-                    countExe++;
-                } else if (feedbackDetailsData[i].Rating == "Good") {
-                    countGood++;
-                } else if (feedbackDetailsData[i].Rating == "Average") {
-                    countAvg++;
-                }
-
-
-                var subCategory = ["Attentive", "Beverages", "Buffet", "Clean &Crisp", "Relaxing & Comfortable", "Reservation Experience", "Kulfi Nation", "Courteous & Concern", "Starters"];
-
-                for (var s = 0; s < subCategory.length; s++) {
-                    if (feedbackDetailsData[i].SubCategory == subCategory[s]) {
-                        fullDetailGraphGSICount[s]++;
-                        fullDetailGraphGSI[s] += feedbackDetailsData[i].GSI;
-                    }
-                }
-
-
-            }
-
-            $scope.feedbackInfoData = [Math.round(gsiFB / countFB), Math.round(gsiSV / countSV),
-                Math.round(gsiAM / countAM), Math.round(gsiBK / countBK)];
-
-            $scope.subcategory_wiseFeedbackInfoData = [
-                Math.round(fullDetailGraphGSI[0] / fullDetailGraphGSICount[0]),
-                Math.round(fullDetailGraphGSI[1] / fullDetailGraphGSICount[1]),
-                Math.round(fullDetailGraphGSI[2] / fullDetailGraphGSICount[2]),
-                Math.round(fullDetailGraphGSI[3] / fullDetailGraphGSICount[3]),
-                Math.round(fullDetailGraphGSI[4] / fullDetailGraphGSICount[4]),
-                Math.round(fullDetailGraphGSI[5] / fullDetailGraphGSICount[5]),
-                Math.round(fullDetailGraphGSI[6] / fullDetailGraphGSICount[6]),
-                Math.round(fullDetailGraphGSI[7] / fullDetailGraphGSICount[7]),
-                Math.round(fullDetailGraphGSI[8] / fullDetailGraphGSICount[8])
-            ];
-
-            $scope.feedbackRatingCount = [countExe, countGood, countAvg];
-
-
-            $scope.pieOptions = {legend: {display: true}};
-            editModalBox = $uibModal.open({
-                animation: true,
-                templateUrl: 'app/pages/customer/view/view.feedbackDetails.html',
-                size: 'lg',
-                backdrop: 'static',
-                keyboard: false,
-                scope: $scope
-            });
-        };
-*/
 
 
         $scope.openFeedbackWindow = function (item) {
@@ -325,8 +246,7 @@
                 $scope.noFeedback = true;
             }
             console.info(feedbackDetailsData);
-            $timeout(function() { // THE FIX
-
+            $timeout(function () { // THE FIX
 
 
                 $scope.feedbackInfoData = [4, 2, 2, 0];
@@ -421,16 +341,14 @@
         $scope.gotoVisitPage = function (item) {
             $location.path("/customer/view/" + item);
         };
-        $scope.chartSelected = function(){
+        $scope.chartSelected = function () {
             $scope.isChartTabSelected = true;
         };
-        $scope.chartDeSelected = function(){
+        $scope.chartDeSelected = function () {
             $scope.isChartTabSelected = false;
         };
 
     }
-
-
 
 
     function loadMainChart($scope) {
@@ -499,6 +417,39 @@
             }
         };
 
+        $scope.filterOutNull = function (p) {
+            if (p.Feedback !== null) {
+                return true;
+            }
+        };
+
+        $scope.filterByAlcoholic = function (value) {
+            if (value == null) {
+                return true;
+            }
+        };
+        $scope.filterByNonAlcoholic = function (value) {
+            if (value == null) {
+                return true;
+            }
+        };
+        /*$scope.feedbackReasons = [{
+         VisitedDate:""
+         }];
+
+         for (var i = 0; i < $scope.visitsData.length; i++) {
+         if ($scope.visitsData[i].Feedback != null) {
+         var feedReasons = $scope.visitsData[i].Feedback.FeedbackReason;
+         for (var j = 0; j < feedReasons.length; j++) {
+         $scope.feedbackReasons[j] = feedReasons[j];
+         $scope.feedbackReasons[j].VisitedDate = $scope.visitsData[i].ReservationDate
+         }
+         }
+         }*/
+
+        console.info($scope.feedbackReasons)
+
+
     }
 
     function FilterByMonth() {
@@ -560,7 +511,6 @@
                 url: '/customer/:phoneno',
                 controller: customerCtrl,
                 templateUrl: 'app/pages/customer/customer.html',
-                title: 'Customer',
                 sidebarMeta: {
                     icon: 'fa fa-user fa-lg',
                     order: 0,

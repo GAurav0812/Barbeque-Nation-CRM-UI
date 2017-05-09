@@ -1,0 +1,10 @@
+<div class="reasons">
+            <span ng-repeat="item in category" class="reasonItem">
+
+            <span style="margin-right: 4px" class="text-raised label label-warning">
+                {{item +" : "}}
+                <small ng-bind-html="categoryWiseFeedbackData[$index]|starFilter"></small>
+            </span>
+            </span>
+
+</div>

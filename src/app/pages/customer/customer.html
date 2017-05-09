@@ -1,10 +1,9 @@
-<div class="col-md-12">
-    <div class="col-md-4">
+<!--<div class="col-md-12" ng-hide="true">&lt;!&ndash;//use ng-hide="isParamNumber" to show it on condition&ndash;&gt;
+    <div class="col-md-5">
         <span class="lead pull-right">Search Customer</span>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         <div class="form-group ">
-
             <form name="newMobileNumber.form" class="form-inline"
                   ng-submit="searchCustomer(newMobileNumber.form.$valid)"
                   novalidate>
@@ -16,11 +15,11 @@
                 </div>
                 <button type="submit" class="btn btn-primary" ng-disabled="newMobileNumber.form.$invalid">
                     <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-                    <!-- <span class="glyphicon glyphicon-search"></span>-->
+                    &lt;!&ndash; <span class="glyphicon glyphicon-search"></span>&ndash;&gt;
                 </button>
             </form>
         </div>
-        <!--   <div class="input-group">
+        &lt;!&ndash;   <div class="input-group">
                <ui-select theme="bootstrap" required="true" data-live-search="true" title="Select With Search" selectpicker
                           ng-mobile="selected.customer"
                           class=" selectpicker with-search"
@@ -40,20 +39,20 @@
                                            <span class=" glyphicon glyphicon-search"></span>
                                        </button>
                 </span>
-           </div>-->
+           </div>&ndash;&gt;
     </div>
-</div>
+</div>-->
 <div class="row">
 
 </div>
 <div class="panel panel-default" ng-show="dataLoading">
-    <div class="panel-heading">
-        <h3 class="panel-title">Customer Information - <span ng-bind="customerData.PhoneNo"></span></h3>
+    <div class="panel-heading  ">
+        <h3 class="panel-title ">Customer Information - <span ng-bind="customerData.PhoneNo"></span></h3>
     </div>
     <div class="panel-body">
         <div class="col-xs-12 controls">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="col-lg-4 col-md-8 col-sm-8 col-xs-8">
                     <h3 ng-hide="selected.customer.ID != 2168832 && selected.customer.ID != 2358241 && selected.customer.ID != 2286670 ">
                         <i class="fa fa-info-circle fa-lg " aria-hidden="true"></i>
                         <b class="text-shadow">Today is
@@ -85,17 +84,13 @@
                             <img class=" uploaded responsive" ng-if="customerData.Alcohol" id="alcoholCust"
                                  height="30px"
                                  ng-src="{{ 'alcohol.png' | appImage }}">
-                            <img class=" uploaded responsive" ng-if="(customerData.MealPreference|uppercase)=='VEG'" height="30px"
+                            <img class=" uploaded responsive" ng-if="(customerData.MealPreference|uppercase)=='VEG'"
+                                 height="30px"
                                  ng-src="{{ 'veg.png' | appImage }}"></small>
                     </h3>
 
                 </div>
-
-                <!-- <button class="btn btn-primary btn-sm  btn-raised">
-                     <i class="fa fa-beer" aria-hidden="true"></i>
-                 </button>-->
-
-                <div class="col-lg-8 col-md-12 col-sm-12 ">
+                <div class="col-lg-8 col-md-4 col-sm-4 col-xs-4">
                     <button class="btn btn-primary btn-sm  btn-raised pull-right"
                             ng-click="editCustomerInfo(studentInfo)">
                         <i class="fa fa-eye"></i> Personal Details
@@ -106,170 +101,327 @@
         <br>
         <br>
         <br>
+        <div class="row hidden-sm hidden-xs">
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Total Visits ({{customerData.NoofVisit}}) </h5>
+                        <div class="visit-text"><b>Last Visited : {{LastVisitMonth}} Months ago</b></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Time Spent / Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-street-view" aria-hidden="true"></i>
+                                {{customerData.AvgTimeSpendIntMins}} minutes</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Gap b/w Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-street-view" aria-hidden="true"></i>
+                                {{customerData.AvgDurationDaysBetweenVisit}} days</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="red-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5> Urgent Feedback : {{countUrgentFeedBack}}</h5>
+                        <div class="text-center">
+                            <div class="gap ">
+                                <span class="label label-success ">Resolved : {{countResolvedUrgentFeedBack}}</span>
+                            </div>
+                            <span class="label label-danger resolved-panel">Unresolved : {{countUrgentFeedBack-countResolvedUrgentFeedBack}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-lg hidden-md">
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Total Visits ({{customerData.NoofVisit}}) </h5>
+                        <div class="visit-text"><b>Last Visited : {{LastVisitMonth}} Months ago</b></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Time Spent / Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-street-view" aria-hidden="true"></i>
+                                {{customerData.AvgTimeSpendIntMins}} minutes</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-lg hidden-md">
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Gap b/w Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-street-view" aria-hidden="true"></i>
+                                {{customerData.AvgDurationDaysBetweenVisit}} days</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="red-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5> Urgent Feedback : {{countUrgentFeedBack}}</h5>
+                        <div class="text-center">
+                            <div class="gap ">
+                                <span class="label label-success ">Resolved : {{countResolvedUrgentFeedBack}}</span>
+                            </div>
+                            <span class="label label-danger resolved-panel">Unresolved : {{countUrgentFeedBack-countResolvedUrgentFeedBack}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-sm hidden-xs">
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Last GSI Percentage</h5>
+                        <div class="dark-blue-text">
+                            <h4>{{customerData.LastGSIPerc}} %</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Amount Spent / Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-inr" aria-hidden="true"></i> {{customerData.AvgBillAmount}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Last Visit Details</h5>
+                        <div class="visit-text-2">
+                            <div><b>Location-{{customerData.LastVisitedOutletName}}</b></div>
+                            <div><b>Date-{{customerData.LastVisitedOn|dateFilter}}</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Number of PAX/Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4>{{customerData.AvgPersonInVisit}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-lg hidden-md">
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Last GSI Percentage</h5>
+                        <div class="dark-blue-text">
+                            <h4>{{customerData.LastGSIPerc}} %</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Amount Spent / Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4><i class="fa fa-inr" aria-hidden="true"></i> {{customerData.AvgBillAmount}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row hidden-lg hidden-md">
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Last Visit Details</h5>
+                        <div class="visit-text-2">
+                            <div><b>Location-{{customerData.LastVisitedOutletName}}</b></div>
+                            <div><b>Date-{{customerData.LastVisitedOn|dateFilter}}</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="blue-panel panel-default text-center">
+                    <div class="panel-body">
+                        <h5>Avg Number of PAX/Visit</h5>
+                        <div class="dark-blue-text">
+                            <h4>{{customerData.AvgPersonInVisit}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="text-center" include-with-scope="app/pages/customer/categoryWiseResponse.html"></div>
+            <br>
+        </div>
+
         <div class="col-sm-12">
             <div class="row">
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Total Visits ({{customerData.NoofVisit}}) </h5>
-                            <div class="visi t-text"><b>Last Visited : {{LastVisitMonth}} Months ago</b></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Avg Time Spent / Visit</h5>
-                            <div class="dark-blue-text">
-                                <h4><i class="fa fa-street-view" aria-hidden="true"></i>
-                                    {{customerData.AvgTimeSpendIntMins}} minutes</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Avg Gap b/w Visit</h5>
-                            <div class="dark-blue-text">
-                                <h4><i class="fa fa-street-view" aria-hidden="true"></i>
-                                    {{customerData.AvgDurationDaysBetweenVisit}} days</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="red-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5> Urgent Feedback : {{countUrgentFeedBack}}</h5>
+                <!--  <div class="col-sm-6">
+                      <div class="blue-panel panel-default">
+                          <div class="panel-heading">
+                              <h3 class="panel-title">Overall Feedback Ratio</h3>
+                          </div>
+                          <div class="panel-body">
+                              <canvas id="feedbackChart" class="chart chart-bar"
+                                      chart-data="feedbackCountReportData" chart-colors="colors" chart-labels="ratings">
+                              </canvas>
+                          </div>
+                      </div>
+                  </div>
+    -->
+                <!-- <div class="col-sm-6">
+                     <div class="blue-panel panel-default">
+                         <div class="panel-heading">
+                             <h3 class="panel-title">Category-wise Feedback Report</h3></div>
+                         <div class="panel-body">
+                             <canvas class="chart chart-bar"
+                                     chart-data="categoryWiseFeedbackData" chart-colors="colors" chart-labels="category"
+                                     chart-options="options">
+                             </canvas>
+                         </div>
+                     </div>
+                 </div>-->
 
-                            <div class="col-sm-12 text-center">
-                                <div>
-                                    <div class="gap ">
-                                        <span class="label label-success ">Resolved : {{countResolvedUrgentFeedBack}}</span>
+
+                <div class="col-sm-6">
+                    <div class="blue-panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">FEEDBACK REASONS/SUGGESTIONS</h3></div>
+                        <div class="panel-body">
+                            <div class="vertical-scroll">
+                                <div class="col-sm-6" ng-repeat="item in customerData.FeedbackReason">
+                                    <div class="reason-cat">
+                                        <div class="reason-title">{{item.SubCategory }}
+                                            <small ng-if="item.Rating!=''"
+                                                   ng-bind-html="item.Rating | ratingFilter"></small>
+                                        </div>
+                                        <div class="sub">{{item.ReasonDesc}}</div>
                                     </div>
-                                    <span class="label label-danger resolved-panel">Unresolved : {{countUrgentFeedBack-countResolvedUrgentFeedBack}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Last GSI Percentage</h5>
-                            <div class="dark-blue-text">
-                                <h4>{{customerData.LastGSIPerc}} %</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Avg Amount Spent / Visit</h5>
-                            <div class="dark-blue-text">
-                                <h4><i class="fa fa-inr" aria-hidden="true"></i> {{customerData.AvgBillAmount}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Last Visit Details</h5>
-                            <div class="visit-text-2">
-                                <div><b>Location-{{customerData.LastVisitedOutletName}}</b></div>
-                                <div><b>Date-{{customerData.LastVisitedOn|dateFilter}}</b></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="blue-panel panel-default text-center">
-                        <div class="panel-body">
-                            <h5>Avg Number of PAX/Visit</h5>
-                            <div class="dark-blue-text">
-                                <h4>{{customerData.AvgPersonInVisit}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="blue-panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Overall Feedback Ratio</h3>
-                        </div>
-                        <div class="panel-body">
-                            <canvas id="feedbackChart" class="chart chart-bar"
-                                    chart-data="feedbackCountReportData" chart-colors="colors" chart-labels="ratings">
-                            </canvas>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="col-sm-6">
                     <div class="blue-panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Category-wise Feedback Report</h3></div>
+                            <h3 class="panel-title">PREFERRED BEVERAGES</h3></div>
                         <div class="panel-body">
-                            <canvas class="chart chart-bar"
-                                    chart-data="categoryWiseFeedbackData" chart-colors="colors" chart-labels="category"
-                                    chart-options="options">
-                            </canvas>
+                            <div class="row vertical-scroll">
+                                <div class="col-sm-6">
+                                    <table class="table table-responsive " ng-if="customerData.Beverages.length!=0"
+                                           st-table="customerData">
+                                        <thead>
+                                        <tr>
+                                            <th class="active"><b>ALCOHLIC BEVERAGES</b></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="items in customerData.Beverages | filter:{Category:'ALCOHLIC BEVERAGES'}:true ">
+                                            <td>{{items.ItemName }}</td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6">
+                                    <table class="table table-responsive " ng-if="customerData.Beverages.length!=0"
+                                           st-table="customerData">
+                                        <thead>
+                                        <tr>
+                                            <th class="active"><b>NON-ALCOHLIC BEVERAGES</b></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="items in customerData.Beverages | filter:nonAlcoholicFilter ">
+                                            <td>{{items.ItemName }}</td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class=" text-center" ng-if="customerData.Beverages.length==0">
+                                    No Preference
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <!--    <div class="col-sm-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Monthly Visiting History</h3>
-                            </div>
-                            <div class="panel-body">
-                                <canvas id="line" class="chart chart-line admin-chart" chart-data="visitorData"
-                                        chart-labels="months"
-                                        chart-options="options">
-                                </canvas>
-                            </div>
-                        </div>
-                    </div>-->
             </div>
         </div>
     </div>
 </div>
+
 <div class="panel panel-default" ng-show="dataLoading">
     <div class="panel-heading">
         <h3 class="panel-title">Visiting History</h3>
     </div>
     <div class="panel-body">
-        <table class="table table-responsive table-striped" st-table="visitsData" st-safe-src="visitMasterData">
+        <table class="table table-striped" st-table="visitsData" st-safe-src="visitMasterData">
             <thead>
             <tr class="sortable">
-                <th st-sort="City"><b>CITY</b></th>
+                <th st-sort="City" class="hidden-xs"><b>CITY</b></th>
                 <th st-sort="OutletName"><b>OUTLET NAME</b></th>
                 <th st-sort="ReservationDate"><b>RESERVATION DATE</b></th>
-                <th st-sort="ReservationType"><b>RESERVATION TYPE</b></th>
-                <th><b>STATUS</b></th>
+                <th class="hidden-md hidden-sm hidden-xs" st-sort="ReservationType"><b>RESERVATION TYPE</b></th>
+                <th class="hidden-md hidden-sm hidden-xs"><b>STATUS</b></th>
+                <th class="hidden-md hidden-sm hidden-xs" st-sort="Amount"><b>AMOUNT</b>( <i class="fa fa-inr "
+                                                                                             aria-hidden="true"></i> )
+                </th>
                 <th><b>FEEDBACK</b></th>
-                <th st-sort="Amount"><b>AMOUNT</b>( <i class="fa fa-inr " aria-hidden="true"></i> )</th>
-                <th><b>ACTION</b></th>
+                <th class="hidden-sm hidden-xs"><b>ACTION</b></th>
             </tr>
             <tr>
-                <th></th>
+                <th class=" hidden-xs"></th>
                 <th></th>
                 <th><input st-search="ReservationDate" placeholder="Search Date"
                            class="input-sm form-control search-input"
                            type="search"/></th>
-                <th><select st-search="ReservationType" st-input-event="change" st-delay="0" ng-mobile="dummy"
-                            class="input-sm form-control">
+                <th class="hidden-md hidden-sm hidden-xs"><select st-search="ReservationType" st-input-event="change"
+                                                                  st-delay="0" ng-mobile="dummy"
+                                                                  class="input-sm form-control">
                     <option value="">
                         All
                     </option>
@@ -284,8 +436,9 @@
                     </option>
                 </select>
                 </th>
-                <th><select st-search="Status" st-input-event="change" st-delay="0" ng-mobile="dummy"
-                            class="input-sm form-control">
+                <th class="hidden-md hidden-sm hidden-xs"><select st-search="Status" st-input-event="change"
+                                                                  st-delay="0" ng-mobile="dummy"
+                                                                  class="input-sm form-control">
                     <option value="">
                         All
                     </option>
@@ -297,19 +450,29 @@
                     </option>
                 </select>
                 </th>
+                <th class="hidden-md hidden-sm hidden-xs"></th>
                 <th></th>
-                <th></th>
-                <th></th>
+                <th class="hidden-sm hidden-xs"></th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="items in visitsData">
-                <td>{{items.City}}</td>
+                <td class="hidden-xs">{{items.City}}</td>
                 <td>{{items.OutletName}}</td>
-                <td>{{items.ReservationDate | dateFilter}}</td>
-                <td>{{items.ReservationType}}</td>
-                <td>{{items.Status}}</td>
+                <td>{{items.ReservationDate | dateFilter}}
+                    <i class="fa fa fa-exclamation-triangle fa-lg" data-toggle="modal"
+                       style="color: #1fade8; vertical-align: middle;"
+                       ng-click="openFeedbackWindow(items)" ng-if="items.CallReasonInfo ">
+                    </i>
+                </td>
+                <td class="hidden-md hidden-sm hidden-xs">{{items.ReservationType}}</td>
+                <td class="hidden-md hidden-sm hidden-xs">{{items.Status}}</td>
+                <td class="hidden-md hidden-sm hidden-xs">{{items.Amount}}</td>
                 <td>
+                    <button class="btn btn-primary btn-xs btn-raised hidden-md hidden-lg" data-toggle="modal"
+                            ng-click="openOrderForm1(items)" data-toggle="tooltip" title="View Order Details"><i
+                            class="fa fa-cutlery fa-lg"></i>
+                    </button>
                     <button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
                             ng-click="openFeedbackWindow(items)" ng-show="items.Feedback"><i
                             class="fa fa-commenting-o fa-lg"></i>
@@ -321,10 +484,8 @@
                     <a class="fa fa-check-circle fa-2x green-icon-text"
                        ng-show="(items.Feedback.UrgentFeedStatus | uppercase) =='CLOSE'"
                        ng-click="openFeedStatusForm2()" aria-hidden="true"></a></b></span>
-
                 </td>
-                <td>{{items.Amount}}</td>
-                <td>
+                <td class="hidden-sm hidden-xs">
                     <!--<button class="btn btn-primary btn-xs btn-raised" data-toggle="modal"
                             ng-click="openVisitDetailForm1(items)" data-toggle="tooltip"
                             title="View Visiting Details">
@@ -340,7 +501,7 @@
             </tbody>
             <tfoot>
             <tr>
-                <td colspan="8" class="text-center">
+                <td colspan="8" class="text-center hidden-md hidden-sm hidden-xs">
                     <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
                 </td>
             </tr>

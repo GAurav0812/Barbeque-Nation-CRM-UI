@@ -1,0 +1,37 @@
+<!--
+<div class="vertical-scroll">
+    <div class="reasons" >
+            <span ng-repeat="rItem in customerData.FeedbackReason" class="reasonItem">
+            <span class="text-raised" style="margin-right: 4px" ng-class="rItem.Reasontype == 'R' ? 'label label-danger' : 'label label-warning'">{{rItem.SubCategory + " : " + rItem.ReasonDesc+ " : "}}
+                <small ng-bind-html="rItem.Rating | ratingFilter"></small>
+            </span>
+            </span>
+    </div>
+</div>-->
+
+<!--<div class="vertical-scroll">
+    <div class="row" ng-repeat="item in visitsData | filter:filterOutNull | orderBy:'-'"
+         style="line-height: 1.6;padding-bottom: 10px">
+        <div class="col-md-2"><span class="label label-default" ng-bind="item.ReservationDate | dateFilter"></span>
+        </div>
+        <div class="col-md-10">
+            <span ng-repeat="rItem in item.Feedback.FeedbackReason">
+
+            <span  style="margin-right: 3px" ng-class="rItem.Reasontype == 'R' ? 'label label-danger' : 'label label-warning'">{{rItem.SubCategory + ":" + rItem.ReasonDesc}}
+                <small
+                        ng-bind-html="rItem.Rating | ratingFilter"></small>
+            </span>
+            </span></div>
+    </div>
+</div>-->
+
+<div class="vertical-scroll">
+    <div class="reasons" >
+            <span ng-repeat="item in visitsData.Feedback" class="reasonItem">
+
+            <span class="text-raised" style="margin-right: 4px" ng-class="item.Reasontype == 'R' ? 'label label-danger' : 'label label-warning'">{{item.SubCategory + " : " + item.ReasonDesc+ " : "}}
+                <small ng-bind-html="item.Rating | ratingFilter"></small>
+            </span>
+            </span>
+    </div>
+</div>

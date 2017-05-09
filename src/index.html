@@ -23,9 +23,9 @@
 </head>
 <body>
 <div class="body-bg"></div>
-<main ng-if="$pageFinishedLoading && globals.currentUser" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+<main ng-if="$pageFinishedLoading && globals.currentUser" class="menu-collapsed">
 
-  <ba-sidebar></ba-sidebar>
+  <ba-sidebar ng-if="sidebar"></ba-sidebar>
   <page-top></page-top>
 
   <div class="al-main">
@@ -38,7 +38,7 @@
   <footer class="al-footer clearfix">
     <div class="al-footer-right"></div>
     <div class="al-footer-main clearfix">
-      <div class="al-copy">Developed & Powered by <a href="http://theuniquemedia.in">The Unique Media Solution</a> 2016</div>
+      <div class="al-copy">Developed & Powered by <a href="http://theuniquemedia.in" target="_blank">The Unique Media Solution</a> 2016</div>
     </div>
   </footer>
 
