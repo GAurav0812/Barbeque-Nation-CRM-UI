@@ -196,7 +196,7 @@
             editModalBox = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/customer/view/view.orderDetails1.html',
-                size: 'lg',
+                size: 'md',
                 backdrop: 'static',
                 keyboard: false,
                 scope: $scope

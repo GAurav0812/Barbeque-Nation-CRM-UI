@@ -9,8 +9,69 @@
         <uib-tabset active="activeTab">
             <uib-tab index="0" heading="Visit">
                 <div class="panel profile-panel">
-                    <div class="panel-body">
-                        <table class="table table-bordered">
+                    <div class="panel-body hidden-xs">
+                        <table class="table table-bordered ">
+                            <tbody>
+                            <tr>
+                                <td class="active"><b>Reservation Date</b></td>
+                                <td><b>{{visitInfo.ReservationDate |dateFilter}}</b></td>
+                                <td class="active"><b>Reservation Time</b></td>
+                                <td><b>{{visitInfo.ReservationTime| timeFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Adult</b></td>
+                                <td><b>{{visitInfo.Adult}}</b></td>
+                                <td class="active"><b>Child</b></td>
+                                <td><b>{{visitInfo.Child}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Reservation Type</b></td>
+                                <td><b>{{visitInfo.ReservationType}}</b></td>
+                                <td class="active"><b>-</b></td>
+                                <td><b>-</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Confirm Time</b></td>
+                                <td><b>{{visitInfo.ConfirmTime| timeFilter}}</b></td>
+                                <td class="active"><b>Seated Time</b></td>
+                                <td><b>{{visitInfo.SeatedTime| timeFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Settlement Time</b></td>
+                                <td><b>{{visitInfo.SettlementTime| timeFilter}}</b></td>
+                                <td class="active"><b>Total Amount</b></td>
+                                <td><b>{{visitInfo.Amount}}</b></td>
+
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Table No</b></td>
+                                <td><b>{{visitInfo.TableNo}}</b></td>
+                                <td class="active"><b>Bill No</b></td>
+                                <td><b>{{visitInfo.BillNo}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>BBQ Festival</b></td>
+                                <td><b>{{visitInfo.BBQFestival|emptyInputFilter}}</b></td>
+                                <td class="active"><b>Calendar Festival</b></td>
+                                <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Calendar Festival</b></td>
+                                <td><b>{{visitInfo.CalendarFestival|emptyInputFilter}}</b></td>
+                                <td class="active"><b>Visit Remark</b></td>
+                                <td><b>{{visitInfo.VisitRemark|emptyInputFilter}}</b></td>
+                            </tr>
+                            <tr>
+                                <td class="active"><b>Car No</b></td>
+                                <td><b>{{visitInfo.CarNo|emptyInputFilter}}</b></td>
+                                <td class="active"><b></b></td>
+                                <td><b></b></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding: 0px;" class="panel-body hidden-lg hidden-sm hidden-md">
+                        <table class="table table-bordered visit-info-table">
                             <tbody>
                             <tr>
                                 <td class="active"><b>Reservation Date</b></td>
@@ -75,49 +136,47 @@
             <uib-tab index="2" heading="Orders">
                 <div class="panel profile-panel">
                     <div class="panel-body">
-                        <table class="table table-bordered" st-table="orderInfo">
-                            <thead>
-                            <tr>
-                                <th><b>SR.NO</b></th>
-                                <th><b>ITEM NAME</b></th>
-                                <th><b>CATEGORY</b></th>
-                                <th><b>PRODUCT GROUP</b></th>
-                                <th><b>DIVISION</b></th>
-                                <th><b>QUANTITY</b></th>
-                                <th><b>TOTAL AMOUNT</b></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="items in orderInfo">
-                                <td>{{$index+1}}</td>
-                                <td ng-bind="items.ItemName"></td>
-                                <td ng-bind="items.Category"></td>
-                                <td ng-bind="items.ProductGroup"></td>
-                                <td ng-bind="items.Division"></td>
-                                <td ng-bind="items.Quantity"></td>
-                                <td ng-bind="items.TotalAmount"></td>
-                            </tr>
-                            <tr>
-                                <th class="text-right" colspan="6"><b>TOTAL</b></th>
-                                <td colspan="6"><b>{{visitData.Amount}}</b></td>
-                            </tr>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <td colspan="7" class="text-center">
-                                    <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
-                                </td>
-                            </tr>
-                            </tfoot>
-                        </table>
+                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <table class="table table-bordered" st-table="orderInfo">
+                                <thead>
+                                <tr>
+                                    <th><b>SR.NO</b></th>
+                                    <th><b>ITEM NAME</b></th>
+                                    <th><b>CATEGORY</b></th>
+                                    <th><b>PRODUCT GROUP</b></th>
+                                    <th><b>DIVISION</b></th>
+                                    <th><b>QUANTITY</b></th>
+                                    <th><b>TOTAL AMOUNT</b></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="items in orderInfo">
+                                    <td>{{$index+1}}</td>
+                                    <td ng-bind="items.ItemName"></td>
+                                    <td ng-bind="items.Category"></td>
+                                    <td ng-bind="items.ProductGroup"></td>
+                                    <td ng-bind="items.Division"></td>
+                                    <td ng-bind="items.Quantity"></td>
+                                    <td ng-bind="items.TotalAmount"></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-right" colspan="6"><b>TOTAL</b></th>
+                                    <td colspan="6"><b>{{visitData.Amount}}</b></td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="7" class="text-center">
+                                        <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </uib-tab>
         </uib-tabset>
-
-
-
-
     </div>
     <div class="modal-footer">
         &nbsp;
