@@ -70,7 +70,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div style="padding: 0px;" class="panel-body hidden-lg hidden-sm hidden-md">
+                    <div style="padding: 5px;" class="panel-body hidden-lg hidden-sm hidden-md">
                         <table class="table table-bordered visit-info-table">
                             <tbody>
                             <tr>
@@ -135,44 +135,80 @@
             </uib-tab>
             <uib-tab index="2" heading="Orders">
                 <div class="panel profile-panel">
-                    <div class="panel-body">
-                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                            <table class="table table-bordered" st-table="orderInfo">
-                                <thead>
-                                <tr>
-                                    <th><b>SR.NO</b></th>
-                                    <th><b>ITEM NAME</b></th>
-                                    <th><b>CATEGORY</b></th>
-                                    <th><b>PRODUCT GROUP</b></th>
-                                    <th><b>DIVISION</b></th>
-                                    <th><b>QUANTITY</b></th>
-                                    <th><b>TOTAL AMOUNT</b></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr ng-repeat="items in orderInfo">
-                                    <td>{{$index+1}}</td>
-                                    <td ng-bind="items.ItemName"></td>
-                                    <td ng-bind="items.Category"></td>
-                                    <td ng-bind="items.ProductGroup"></td>
-                                    <td ng-bind="items.Division"></td>
-                                    <td ng-bind="items.Quantity"></td>
-                                    <td ng-bind="items.TotalAmount"></td>
-                                </tr>
-                                <tr>
-                                    <th class="text-right" colspan="6"><b>TOTAL</b></th>
-                                    <td colspan="6"><b>{{visitData.Amount}}</b></td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="7" class="text-center">
-                                        <div st-pagination="" st-items-by-page="" st-displayed-pages="5"></div>
-                                    </td>
-                                </tr>
-                                </tfoot>
-                            </table>
-                        </div>
+                    <div class="panel-body hidden-xs hidden-sm">
+                        <table class="table table-bordered" st-table="orderInfo">
+                            <thead>
+                            <tr>
+                                <th><b>SR.NO</b></th>
+                                <th><b>ITEM NAME</b></th>
+                                <th><b>CATEGORY</b></th>
+                                <th><b>PRODUCT GROUP</b></th>
+                                <th><b>DIVISION</b></th>
+                                <th><b>QUANTITY</b></th>
+                                <th><b>TOTAL AMOUNT</b></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="items in orderInfo">
+                                <td>{{$index+1}}</td>
+                                <td ng-bind="items.ItemName"></td>
+                                <td ng-bind="items.Category"></td>
+                                <td ng-bind="items.ProductGroup"></td>
+                                <td ng-bind="items.Division"></td>
+                                <td ng-bind="items.Quantity"></td>
+                                <td ng-bind="items.TotalAmount"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="6"><b>TOTAL</b></th>
+                                <td colspan="6"><b>{{visitData.Amount}}</b></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding: 5px;" class="panel-body hidden-lg hidden-md">
+                        <table style="font-size: 10px" class="table table-bordered" st-table="orderInfo">
+                            <thead>
+                            <tr>
+                                <th><b>SR.NO</b></th>
+                                <th><b>ITEM DETAILS</b></th>
+                                <th><b>TOTAL AMOUNT</b></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="items in orderInfo">
+                                <td>{{$index+1}}</td>
+                                <td>
+                                    <div>
+                                        <div style="margin: 0px 0px -15px 0px;">
+                                            <span><b>Item Name : </b></span>
+                                            <span>{{items.ItemName}}</span>
+                                        </div>
+                                        <div style="margin: 0px 0px -15px 0px;">
+                                            <span><b>Category : </b></span>
+                                            <span>{{items.Category}}</span>
+                                        </div>
+                                        <div style="margin: 0px 0px -15px 0px;">
+                                            <span><b>Product Group : </b></span>
+                                            <span>{{items.ProductGroup}}</span>
+                                        </div>
+                                        <div style="margin: 0px 0px -15px 0px;">
+                                            <span><b>Division : </b></span>
+                                            <span>{{items.Division}}</span>
+                                        </div>
+                                        <div style="margin: 0px 0px 0px 0px;" >
+                                            <span><b>Quantity : </b></span>
+                                            <span>{{items.Quantity}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td ng-bind="items.TotalAmount"></td>
+                            </tr>
+                            <tr>
+                                <th class="text-right" colspan="2"><b>TOTAL</b></th>
+                                <td colspan="2"><b>{{visitData.Amount}}</b></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </uib-tab>

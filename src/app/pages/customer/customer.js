@@ -19,7 +19,9 @@
         $scope.selected = {};
         $scope.urgentFeedback = false;
         $scope.notUrgentFeedback = false;
+        $scope.ItHasActiveVouchers = false;
         $scope.dataLoading = false;
+        $scope.isHavingCar = false;
         $scope.noValidCustomer = false;
         $scope.isChartTabSelected = false;
         $scope.newMobileNumber = {
@@ -72,6 +74,13 @@
                     //console.info(response.data);
                     $scope.customerData = response.data.customerinfo;
                     $scope.dataLoading = true;
+                    $scope.tempVouchersMasterData = $filter('filter')($scope.customerData.Vouchers, {Status: 1});
+                    $scope.usedVouchersData = $filter('filter')($scope.customerData.Vouchers, {Status: 2});
+                    if ($scope.tempVouchersMasterData.length != 0) {
+                        $scope.ItHasActiveVouchers = true;
+                    }
+                    $scope.vouchersMasterData = $scope.tempVouchersMasterData;
+                    $scope.vouchersData = [].concat($scope.vouchersMasterData);
                     $scope.visitMasterData = response.data.customerinfo.Visits;
                     $scope.visitsData = [].concat($scope.visitMasterData);//storing visitData
                     // $scope.visitsItemData = [];
@@ -80,12 +89,18 @@
                     $scope.totalFeedback = 0;
                     $scope.countUrgentFeedBack = 0;
                     $scope.countResolvedUrgentFeedBack = 0;
-
+                    $scope.customerCars=[];
                     for (var i = 0; i < $scope.visitsData.length; i++) {
                         if ($scope.visitsData[i].Feedback != null) {
                             $scope.totalFeedback = (parseInt($scope.totalFeedback + $scope.visitsData[i].Feedback.GSI));
                             $scope.countUrgentFeedBack = $scope.countUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeed ? 1 : 0);
                             $scope.countResolvedUrgentFeedBack = $scope.countResolvedUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeedStatus.toUpperCase() == "CLOSE" ? 1 : 0);
+                        }
+                        if ($scope.visitsData[i].CarNo != "" && $scope.visitsData[i].Feedback != null){
+                            $scope.customerCars.push(CarNo);
+                            $scope.isHavingCar = true;
+                        }else {
+                            $scope.isHavingCar = false;
                         }
                     }
                     $scope.avgFeedback = Math.round(($scope.totalFeedback / $scope.visitsData.length) * 100) / 100;
@@ -136,7 +151,19 @@
          }
          }*/
 
-
+        var visitWiseRemarkModal;
+        $scope.visitWiseRemark="";
+        $scope.openViewRemark = function (obj) {
+            $scope.visitWiseRemark=obj;
+            visitWiseRemarkModal = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/customer/visitRemarkPupup.html',
+                size: 'md',
+                backdrop: 'static',
+                keyboard: false,
+                scope: $scope
+            });
+        };
         $scope.editCustomerInfo = function () {
             editModalBox = $uibModal.open({
                 animation: true,
@@ -196,7 +223,7 @@
             editModalBox = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/customer/view/view.orderDetails1.html',
-                size: 'md',
+                size: 'lg',
                 backdrop: 'static',
                 keyboard: false,
                 scope: $scope

@@ -1,0 +1,47 @@
+<!--<div class="modal-content">
+    <div class="modal-body">
+        <button style="margin: -5px -2px 0px 0px!important;" type="button" class="close " ng-click="$dismiss()"
+                aria-label="Close">
+            <em style="color: #000805;" class="fa fa-close "></em>
+        </button>
+        <div class="col-sm-12 text-center">
+           &lt;!&ndash; <h3 class="remark-color-head">Remark given on : {{visitWiseRemark.ReservationDate | dateFilter}}</h3>&ndash;&gt;
+            <div class="hidden-xs remark-color"> <span class="remark-codes"> " </span> {{visitWiseRemark.VisitRemark}} <span class="remark-codes"> " </span></div>
+            <div style=" color: #1fade8!important; margin: 20px 0px -15px 0px!important;" class="hidden-sm hidden-md hidden-lg" > <span class="remark-codes"> " </span>{{visitWiseRemark.VisitRemark}}  <span class="remark-codes"> " </span> </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        &nbsp;
+    </div>
+</div>-->
+
+<div class="modal-content">
+    <div class="modal-body">
+        <button style="margin: -5px -2px 0px 0px!important;" type="button" class="close " ng-click="$dismiss()"
+                aria-label="Close">
+            <em style="color: #000805;" class="fa fa-close "></em>
+        </button>
+        <div class="col-sm-12">
+            <div class="hidden-xs">
+                <label class="remark-color-head">Feedback given on : {{visitWiseRemark.ReservationDate | dateFilter}}</label>
+                <ul class="remark-color" style="padding-top: 10px;">
+                    <li ng-if="visitWiseRemark.CallReasonInfo!=''" class="visit-remark-list-li"><b>Call Reason : </b> {{visitWiseRemark.CallReasonInfo}}</li>
+                    <li ng-if="visitWiseRemark.VisitRemark!=''" class="visit-remark-list-li"><b>Visit Remark : </b> {{visitWiseRemark.VisitRemark}}</li>
+                    <li ng-if="visitWiseRemark.Notes!=''" class="visit-remark-list-li"><b>Note Given : </b> {{visitWiseRemark.Notes}}</li>
+                </ul>
+            </div>
+            <div  class="hidden-sm hidden-md hidden-lg remark-xs-color">
+                <label class="remark-color-xs-head">Feedback given on : {{visitWiseRemark.ReservationDate | dateFilter}}</label>
+                <ul  style="padding-top: 10px;">
+                    <li ng-if="visitWiseRemark.CallReasonInfo!=''" class="visit-remark-list-li"><b>Call Reason : </b> {{visitWiseRemark.CallReasonInfo}}</li>
+                    <li ng-if="visitWiseRemark.VisitRemark!=''"  class="visit-remark-list-li"><b>Visit Remark : </b> {{visitWiseRemark.VisitRemark}}</li>
+                    <li ng-if="visitWiseRemark.Notes!=''" class="visit-remark-list-li"><b>Note Given : </b> {{visitWiseRemark.Notes}}</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        &nbsp;
+    </div>
+</div>

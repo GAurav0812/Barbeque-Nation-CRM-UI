@@ -1,6 +1,6 @@
 $left-space: 180px;
 
-@include scrollbars(.5em, #d9d9d9, rgba(0,0,0,0));
+@include scrollbars(.5em, #d9d9d9, rgba(0, 0, 0, 0));
 
 html {
   position: relative;
@@ -21,7 +21,7 @@ body {
   }
 }
 
-body.mobile{
+body.mobile {
   background: none;
   /*.body-bg{
     display: block;
@@ -33,18 +33,17 @@ body.mobile{
     background-attachment: inherit;
     background-color: $body-bg;
   }*/
-  &.blur-theme .body-bg{
+  &.blur-theme .body-bg {
     @include main-background();
   }
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
-{
-  html{
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  html {
     overflow: hidden;
     height: 100%;
   }
-  body{
+  body {
     overflow: auto;
     height: 100%;
   }
@@ -55,9 +54,10 @@ a {
   outline: 0 !important;
 }
 
-.body-bg{
+.body-bg {
   display: none;
 }
+
 .al-header {
   display: block;
   height: 49px;
@@ -69,7 +69,7 @@ a {
 }
 
 .al-main {
- // margin-left: $left-space;
+  // margin-left: $left-space;
   padding: 66px 0 34px 0;
   min-height: 500px;
 }
@@ -213,12 +213,42 @@ a {
 }
 
 .full-invisible {
-  visibility: hidden!important;
+  visibility: hidden !important;
   * {
-    visibility: hidden!important;
+    visibility: hidden !important;
   }
 }
 
 .irs-grid-text {
   color: $default-text;
+}
+
+.remark-color-head {
+  color: #117198 !important;
+  font-size: x-large!important;
+}
+.remark-color-xs-head {
+  color: #117198 !important;
+  font-size: large!important;
+}
+.remark-color {
+  color: #1fade8!important;
+  font-size: large;
+}
+.remark-codes{
+  color: #105a79!important;
+}
+.remark-xs-color{
+  color: #1fade8!important;
+  margin: 20px 0px -15px 0px!important;
+}
+.visit-remark-modal-close-btn{
+  margin: -5px -2px 0px 0px!important;
+}
+
+.visit-remark-list-li{
+  padding: 7px 7px 7px 0 !important;
+}
+.has-car{
+  color: #f58220!important;
 }
