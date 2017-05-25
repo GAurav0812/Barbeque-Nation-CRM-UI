@@ -69,13 +69,14 @@
                  console.log(data)
                  });*/
 
-                // $http.get("../Service1.svc/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
-                $http.get("/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
+                $http.get("../Service1.svc/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
+                //$http.get("/GetCustomerProfile/" + $scope.newMobileNumber.info.mobile).then(function (response) {
                     //console.info(response.data);
                     $scope.customerData = response.data.customerinfo;
                     $scope.dataLoading = true;
                     $scope.tempVouchersMasterData = $filter('filter')($scope.customerData.Vouchers, {Status: 1});
-                    $scope.usedVouchersData = $filter('filter')($scope.customerData.Vouchers, {Status: 2});
+                    $scope.usedVouchersMasterData = $filter('filter')($scope.customerData.Vouchers, {Status: 2});
+                    $scope.usedVouchersData = [].concat($scope.usedVouchersMasterData);
                     if ($scope.tempVouchersMasterData.length != 0) {
                         $scope.ItHasActiveVouchers = true;
                     }
@@ -89,17 +90,17 @@
                     $scope.totalFeedback = 0;
                     $scope.countUrgentFeedBack = 0;
                     $scope.countResolvedUrgentFeedBack = 0;
-                    $scope.customerCars=[];
+                    $scope.customerCars = [];
                     for (var i = 0; i < $scope.visitsData.length; i++) {
                         if ($scope.visitsData[i].Feedback != null) {
                             $scope.totalFeedback = (parseInt($scope.totalFeedback + $scope.visitsData[i].Feedback.GSI));
                             $scope.countUrgentFeedBack = $scope.countUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeed ? 1 : 0);
                             $scope.countResolvedUrgentFeedBack = $scope.countResolvedUrgentFeedBack + ($scope.visitsData[i].Feedback.UrgentFeedStatus.toUpperCase() == "CLOSE" ? 1 : 0);
                         }
-                        if ($scope.visitsData[i].CarNo != "" && $scope.visitsData[i].Feedback != null){
+                        if ($scope.visitsData[i].CarNo != "" && $scope.visitsData[i].Feedback != null) {
                             $scope.customerCars.push(CarNo);
                             $scope.isHavingCar = true;
-                        }else {
+                        } else {
                             $scope.isHavingCar = false;
                         }
                     }
@@ -112,6 +113,7 @@
                     loadMainChart($scope);
                 }, function (errorMsg) {
                     toastr.error("No customer with this number");
+                    LoadingModal.close();
                     $scope.dataLoading = false;
                 });
             }
@@ -151,10 +153,21 @@
          }
          }*/
 
+        var inactiveVouchersModal;
+        $scope.vouchersHistoryPopUp = function () {
+            inactiveVouchersModal = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/customer/InactiveVouchersList.html',
+                size: 'lg',
+                backdrop: 'static',
+                keyboard: false,
+                scope: $scope
+            });
+        };
         var visitWiseRemarkModal;
-        $scope.visitWiseRemark="";
+        $scope.visitWiseRemark = "";
         $scope.openViewRemark = function (obj) {
-            $scope.visitWiseRemark=obj;
+            $scope.visitWiseRemark = obj;
             visitWiseRemarkModal = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/customer/visitRemarkPupup.html',

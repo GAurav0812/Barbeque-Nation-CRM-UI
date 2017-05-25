@@ -47,7 +47,8 @@
 </div>
 <div class="panel panel-default" ng-show="dataLoading">
     <div class="panel-heading  ">
-        <h3 class="panel-title ">Customer Information - <span ng-bind="customerData.PhoneNo"></span> <span ng-if="isHavingCar"class="has-car"><i class="fa fa-car" aria-hidden="true"></i></span></h3>
+        <h3 class="panel-title ">Customer Information - <span ng-bind="customerData.PhoneNo"></span> <span
+                ng-if="isHavingCar" class="has-car"><i class="fa fa-car" aria-hidden="true"></i></span></h3>
     </div>
     <div class="panel-body">
         <div class="col-xs-12 controls">
@@ -331,6 +332,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class=" text-center" ng-if="customerData.FeedbackReason.length==0">
+                                No Data
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -460,9 +464,11 @@
                 <td class="hidden-xs">{{items.City}}</td>
                 <td>{{items.OutletName}}</td>
                 <td>{{items.ReservationDate | dateFilter}}
-                    <i class="fa fa fa-exclamation-triangle fa-lg" data-toggle="modal" data-toggle="tooltip" title="Details about customer feedback"
+                    <i class="fa fa fa-exclamation-triangle fa-lg" data-toggle="modal" data-toggle="tooltip"
+                       title="Details about customer feedback"
                        style="color: #1674d8; vertical-align: middle; cursor: pointer"
-                       ng-click="openViewRemark(items)" ng-if="items.VisitRemark!='' || items.CallReasonInfo!='' || items.Notes!='' ">
+                       ng-click="openViewRemark(items)"
+                       ng-if="items.VisitRemark!='' || items.CallReasonInfo!='' || items.Notes!='' ">
                     </i>
                 </td>
                 <td class="hidden-md hidden-sm hidden-xs">{{items.ReservationType}}</td>
@@ -513,11 +519,20 @@
         </table>
     </div>
 </div>
-
-<div class="panel panel-default" ng-if="ItHasActiveVouchers">
+<div class="panel panel-default" ng-show="dataLoading">
     <div class="panel-heading">
-        <h3 class="panel-title">Active Vouchers</h3>
+        <div class="row">
+            <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                <h3 class="panel-title">Active Vouchers</h3>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 dash-row">
+                <button class="btn btn-primary btn-danger pull-right btn-sm vouchers-history-btn "
+                        ng-click="vouchersHistoryPopUp()">History
+                </button>
+            </div>
+        </div>
     </div>
+
     <div class="panel-body hidden-xs hidden-sm">
         <table class="table table-striped" st-table="vouchersData" st-safe-src="vouchersMasterData">
             <thead>
@@ -538,6 +553,11 @@
                 <td>{{items.IssuedOutlet}}</td>
                 <td>{{items.ExpiryDate | dateFilter}}</td>
                 <td>{{items.StatusLabel}}</td>
+            </tr>
+            <tr>
+                <td colspan="6" class=" text-center" ng-if="vouchersData.length==0">
+                    No Active Vouchers
+                </td>
             </tr>
             </tbody>
             <tfoot>
@@ -576,13 +596,18 @@
                             <span><b>Issued Outlet : </b></span>
                             <span>{{items.IssuedOutlet}}</span>
                         </div>
-                        <div style="margin: 0px 0px 0px 0px;" >
+                        <div style="margin: 0px 0px 0px 0px;">
                             <span><b>Status : </b></span>
                             <span>{{items.StatusLabel}}</span>
                         </div>
                     </div>
                 </td>
                 <td>{{items.ExpiryDate}}</td>
+            </tr>
+            <tr>
+                <td colspan="6" class=" text-center" ng-if="vouchersData.length==0">
+                    No Active Vouchers
+                </td>
             </tr>
             </tbody>
             <tfoot>
